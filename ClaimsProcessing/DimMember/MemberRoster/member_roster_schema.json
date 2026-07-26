@@ -1,0 +1,222 @@
+{
+	"ColumnNames": [
+		{
+			"FieldName": "TEMPLATE",
+			"OrdinalPosition": -1,
+			"DataType": "TEMPLATE",
+			"Validators": [
+				{
+					"Name": "TEMPLATE",
+					"Value": "TEMPLATE",
+					"InputValue": [
+						"TEMPLATE"
+					],
+					"ConditionCol": "TEMPLATE",
+					"ConditionVal": [
+						"TEMPLATE"
+					]
+				}
+			]
+		},
+		{
+			"FieldName": "ClientName",
+			"OrdinalPosition": 0,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "POCode",
+			"OrdinalPosition": 1,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "POName",
+			"OrdinalPosition": 2,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "PracticeCode",
+			"OrdinalPosition": 3,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "PracticeName",
+			"OrdinalPosition": 4,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "ProviderAddress1",
+			"OrdinalPosition": 5,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "ProviderAddress2",
+			"OrdinalPosition": 6,
+			"DataType": "string"			
+		},
+		{
+			"FieldName": "ProviderCity",
+			"OrdinalPosition": 7,
+			"DataType": "string"			
+		},
+		{
+			"FieldName": "ProviderState",
+			"OrdinalPosition": 8,
+			"DataType": "string"	
+		},
+		{
+			"FieldName": "ProviderZipCode",
+			"OrdinalPosition": 9,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ProviderFirstName",
+			"OrdinalPosition": 10,
+			"DataType": "string"			
+		},
+		{
+			"FieldName": "ProviderMiddleName",
+			"OrdinalPosition": 11,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ProviderLastName",
+			"OrdinalPosition": 12,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ClientProviderID",
+			"OrdinalPosition": 13,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ProviderNPI",
+			"OrdinalPosition": 14,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "ProviderPhoneNumber",
+			"OrdinalPosition": 15,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ReportingLevel",
+			"OrdinalPosition": 16,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "ClientMemberID",
+			"OrdinalPosition": 17,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "MemberHICN",
+			"OrdinalPosition": 18,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "MemberFirstName",
+			"OrdinalPosition": 19,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "MemberMiddleName",
+			"OrdinalPosition": 20,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "MemberLastName",
+			"OrdinalPosition": 21,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "MemberDOB",
+			"OrdinalPosition": 22,
+			"DataType": "Date"
+		},
+		{
+			"FieldName": "MemberPhoneNumber",
+			"OrdinalPosition": 23,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "PlanType",
+			"OrdinalPosition": 24,
+			"DataType": "string"
+		},
+		{
+			"FieldName": "MemberPlanEligibilityStart",
+			"OrdinalPosition": 25,
+			"DataType": "Date"
+		},
+		{
+			"FieldName": "NewPECMember",
+			"OrdinalPosition": 26,
+			"DataType": "boolean"
+		},		
+		{
+			"FieldName": "ProgramType",
+			"OrdinalPosition": 27,
+			"DataType": "string"			
+		},
+		{
+			"FieldName": "RosterMonth",
+			"OrdinalPosition": 28,
+			"DataType": "string",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		},
+		{
+			"FieldName": "FileLoadDate",
+			"OrdinalPosition": 29,
+			"DataType": "timestamp",
+			"Validators": [
+				{
+					"Name": "isRequired"
+				}
+			]
+		}
+	]
+}

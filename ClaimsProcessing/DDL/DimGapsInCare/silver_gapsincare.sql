@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_gapsincare (
 ,providerName  string
 ,dataLoadName  string
 ,dataFileName  string
-,expectedRate string
+,expectedRate string    
 ,serviceNeededByDate date
 ,PDC string
 ,lastHBVal string
