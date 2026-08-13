@@ -1,0 +1,15 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "dimQualityMeasure",
+      "DestinationTable": "claimsprocessing.gold.gold_dimqualitymeasure",
+      "SourceTables": [
+        {
+          "Entity": "GapsInCare",
+          "SourceTable": "claimsprocessing.silver.silver_gapsincare",
+          "SourceFormat": "delta"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+SELECT gapsInCareID
+FROM tempSQLScript 
+GROUP BY gapsInCareID
+HAVING COUNT(1) > 1;
