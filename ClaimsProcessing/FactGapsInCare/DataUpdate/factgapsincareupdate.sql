@@ -1,6 +1,6 @@
 MERGE INTO claimsprocessing.gold.factgapsincare t
 USING (
-    SELECT * FROM tempSQLScript
+    SELECT * FROM tempFactGapsInCareSQLScript
 ) s
 ON s.gapsInCareID = t.gapsInCareID    
 

@@ -1,0 +1,319 @@
+{
+  "Fields": [
+    {
+      "FieldName": "ClientID",
+      "DataType": "StringType",
+      "Ordinal": 1
+    },
+    {
+      "FieldName": "FileID",
+      "DataType": "IntegerType",
+      "Ordinal": 2
+    },
+    {
+      "FieldName": "LoadDateTime",
+      "DataType": "DateType",
+      "Ordinal": 3
+    },
+    {
+      "FieldName": "FileLayoutID",
+      "DataType": "IntegerType",
+      "Ordinal": 4
+    },
+    {
+      "FieldName": "FileLayoutDescription",
+      "DataType": "StringType",
+      "Ordinal": 5
+    },
+    {
+      "FieldName": "UniquePersonKey",
+      "DataType": "StringType",
+      "Ordinal": 6
+    },
+    {
+      "FieldName": "PlanMemberID",
+      "DataType": "StringType",
+      "Ordinal": 7
+    },
+    {
+      "FieldName": "BeneficiaryID",
+      "DataType": "StringType",
+      "Ordinal": 8
+    },
+    {
+      "FieldName": "MedicaidID",
+      "DataType": "StringType",
+      "Ordinal": 9
+    },
+    {
+      "FieldName": "StartDate",
+      "DataType": "DateType",
+      "Ordinal": 10
+    },
+    {
+      "FieldName": "EndDate",
+      "DataType": "DateType",
+      "Ordinal": 11
+    },
+    {
+      "FieldName": "CMSContractNumber",
+      "DataType": "StringType",
+      "Ordinal": 12
+    },
+    {
+      "FieldName": "ProductLine",
+      "DataType": "StringType",
+      "Ordinal": 13
+    },
+    {
+      "FieldName": "ProductID",
+      "DataType": "StringType",
+      "Ordinal": 14
+    },
+    {
+      "FieldName": "SubscriberID",
+      "DataType": "StringType",
+      "Ordinal": 15
+    },
+    {
+      "FieldName": "SecondProductID",
+      "DataType": "StringType",
+      "Ordinal": 16
+    },
+    {
+      "FieldName": "AdditionalSpanValue",
+      "DataType": "StringType",
+      "Ordinal": 17
+    },
+    {
+      "FieldName": "PBP",
+      "DataType": "StringType",
+      "Ordinal": 18
+    },
+    {
+      "FieldName": "ECDSFlag",
+      "DataType": "StringType",
+      "Ordinal": 19
+    },
+    {
+      "FieldName": "AlphaPrefix",
+      "DataType": "StringType",
+      "Ordinal": 20
+    },
+    {
+      "FieldName": "Pharmacy",
+      "DataType": "StringType",
+      "Ordinal": 21
+    },
+    {
+      "FieldName": "Dental",
+      "DataType": "StringType",
+      "Ordinal": 22
+    },
+    {
+      "FieldName": "Vision",
+      "DataType": "StringType",
+      "Ordinal": 23
+    },
+    {
+      "FieldName": "MH",
+      "DataType": "StringType",
+      "Ordinal": 24
+    },
+    {
+      "FieldName": "MHIP",
+      "DataType": "StringType",
+      "Ordinal": 25
+    },
+    {
+      "FieldName": "MHDN",
+      "DataType": "StringType",
+      "Ordinal": 26
+    },
+    {
+      "FieldName": "MHAMB",
+      "DataType": "StringType",
+      "Ordinal": 27
+    },
+    {
+      "FieldName": "CD",
+      "DataType": "StringType",
+      "Ordinal": 28
+    },
+    {
+      "FieldName": "CDIP",
+      "DataType": "StringType",
+      "Ordinal": 29
+    },
+    {
+      "FieldName": "CDDN",
+      "DataType": "StringType",
+      "Ordinal": 30
+    },
+    {
+      "FieldName": "CDAMB",
+      "DataType": "StringType",
+      "Ordinal": 31
+    },
+    {
+      "FieldName": "Hospice",
+      "DataType": "StringType",
+      "Ordinal": 32
+    },
+    {
+      "FieldName": "SNP",
+      "DataType": "StringType",
+      "Ordinal": 33
+    },
+    {
+      "FieldName": "SNPEnrolleeType",
+      "DataType": "IntegerType",
+      "Ordinal": 34
+    },
+    {
+      "FieldName": "IssuerID",
+      "DataType": "StringType",
+      "Ordinal": 35
+    },
+    {
+      "FieldName": "MetalLevel",
+      "DataType": "StringType",
+      "Ordinal": 36
+    },
+    {
+      "FieldName": "CostSharingVariant",
+      "DataType": "StringType",
+      "Ordinal": 37
+    },
+    {
+      "FieldName": "MarketCoverage",
+      "DataType": "StringType",
+      "Ordinal": 38
+    },
+    {
+      "FieldName": "CSREligibility",
+      "DataType": "StringType",
+      "Ordinal": 39
+    },
+    {
+      "FieldName": "MemberEnrollmentQHPState",
+      "DataType": "StringType",
+      "Ordinal": 40
+    },
+    {
+      "FieldName": "LongTermInstitution",
+      "DataType": "StringType",
+      "Ordinal": 41
+    },
+    {
+      "FieldName": "PlanEmployee",
+      "DataType": "StringType",
+      "Ordinal": 42
+    },
+    {
+      "FieldName": "MedicaidExpansionQHPEnrollee",
+      "DataType": "IntegerType",
+      "Ordinal": 43
+    },
+    {
+      "FieldName": "MemberGroupCode",
+      "DataType": "StringType",
+      "Ordinal": 44
+    },
+    {
+      "FieldName": "AltSpanReporting1",
+      "DataType": "StringType",
+      "Ordinal": 45
+    },
+    {
+      "FieldName": "AltSpanReporting2",
+      "DataType": "StringType",
+      "Ordinal": 46
+    },
+    {
+      "FieldName": "AltSpanReporting3",
+      "DataType": "StringType",
+      "Ordinal": 47
+    },
+    {
+      "FieldName": "AltSpanReporting4",
+      "DataType": "StringType",
+      "Ordinal": 48
+    },
+    {
+      "FieldName": "AltSpanReporting5",
+      "DataType": "StringType",
+      "Ordinal": 49
+    },
+    {
+      "FieldName": "AltSpanReporting6",
+      "DataType": "StringType",
+      "Ordinal": 50
+    },
+    {
+      "FieldName": "AltSpanReporting7",
+      "DataType": "StringType",
+      "Ordinal": 51
+    },
+    {
+      "FieldName": "AltSpanReporting8",
+      "DataType": "StringType",
+      "Ordinal": 52
+    },
+    {
+      "FieldName": "AltSpanReporting9",
+      "DataType": "StringType",
+      "Ordinal": 53
+    },
+    {
+      "FieldName": "AltSpanReporting10",
+      "DataType": "StringType",
+      "Ordinal": 54
+    }, 
+    {
+      "FieldName": "Segment",
+      "DataType": "StringType",
+      "Ordinal": 55
+    },
+    {
+      "FieldName": "HealthPlanClassID",
+      "DataType": "StringType",
+      "Ordinal": 56
+    },
+    {
+      "FieldName": "HealthPlanCode",
+      "DataType": "StringType",
+      "Ordinal": 57
+    },
+    {
+      "FieldName": "DisenrollmentReasonCode",
+      "DataType": "StringType",
+      "Ordinal": 58
+    },
+    {
+      "FieldName": "SignatureDate",
+      "DataType": "StringType",
+      "Ordinal": 59
+    },
+    {
+      "FieldName": "CSNPDisenrollmentEffDate",
+      "DataType": "StringType",
+      "Ordinal": 60
+    },
+    {
+      "FieldName": "ElectionType",
+      "DataType": "StringType",
+      "Ordinal": 61
+    },
+    {
+      "FieldName": "TermReasonCode",
+      "DataType": "StringType",
+      "Ordinal": 62
+    },
+    {
+      "FieldName": "SourcefileID",
+      "DataType": "StringType",
+      "Ordinal": 63
+    }
+  ]
+}

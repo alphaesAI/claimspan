@@ -1,6 +1,6 @@
 MERGE INTO DestinationTable t 
 USING (
-    SELECT * FROM tempSQLScript
+    SELECT * FROM temptableSQLScript
 ) s
 ON IFNULL(s.qualityEventDescription, '') = IFNULL(t.qualityEventDescription, '') 
 

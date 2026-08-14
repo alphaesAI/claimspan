@@ -1,13 +1,13 @@
 WITH memAll AS (
     SELECT 
         *,
-        ROW_NUMBER() OVER(PARTITION BY BISInternalPersonID ORDER BY LoadDateTime DESC) as rowNum
+        ROW_NUMBER() OVER(PARTITION BY ESAIInternalPersonID ORDER BY LoadDateTime DESC) as rowNum
     FROM member
 ),
 
 mem AS (
     SELECT 
-        BISInternalPersonID,
+        ESAIInternalPersonID,
         uniquePersonKey,
         planMemberID,
         subscriberID,
@@ -69,7 +69,7 @@ mem AS (
 
 SELECT 
     CAST(HASH(
-        IFNULL(BISInternalPersonID, ""), "|",
+        IFNULL(ESAIInternalPersonID, ""), "|",
         IFNULL(uniquePersonKey, ""), "|",
         IFNULL(planMemberID, ""), "|",
         IFNULL(subscriberID, ""), "|",

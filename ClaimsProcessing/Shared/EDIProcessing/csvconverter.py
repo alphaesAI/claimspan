@@ -29,4 +29,5 @@ class CSVConverter:
                 row = [str(record.get(header, "")).strip() for header in headers]
                 writer.writerow(row)
 
+        print(f"CSV file written to: {output_file_path}")
         return output_file_path

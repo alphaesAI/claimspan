@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_dimmember (
  memberKey  bigint
-,BISInternalPersonID  string
+,ESAIInternalPersonID  string
 ,uniquePersonKey  string
 ,planMemberID  string
 ,subscriberID  string

@@ -4,7 +4,8 @@ from typing import Union, List, Dict
 from .mappings import MAPPINGS
 
 class Mapper:
-    """Maps EDI structured JSON to CSV-friendly flat dictionaries.
+    """
+    Maps EDI structured JSON to CSV-friendly flat dictionaries.
     
     Handles both single record (dict) and multiple records (list of dicts) from StructuredFormatter.
     """

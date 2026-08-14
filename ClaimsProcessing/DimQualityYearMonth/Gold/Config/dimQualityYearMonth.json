@@ -1,0 +1,17 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "dimQualityYearMonth",
+      "DestinationTable": "claimsprocessing.gold.gold_dimqualityyearmonth",
+      "SourceTables": [
+        {
+          "Entity": "GapsInCare",
+          "SourceTable": "claimsprocessing.silver.silver_gapsincare",
+          "SourceFormat": "delta"
+        }       
+      ],
+      "SQLScriptPath": "../DataProcessing/dimQualityYearMonthprocessing.sql",
+      "MergeScriptPath": "../DataUpdate/dimQualityYearMonthupdate.sql"
+    }
+  ]
+}

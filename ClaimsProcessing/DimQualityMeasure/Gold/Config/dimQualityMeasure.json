@@ -1,0 +1,17 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "dimQualityMeasure",
+      "DestinationTable": "claimsprocessing.gold.gold_dimqualitymeasure",
+      "SourceTables": [
+        {
+          "Entity": "GapsInCare",
+          "SourceTable": "claimsprocessing.silver.silver_gapsincare",
+          "SourceFormat": "delta"
+        }
+      ],
+      "SQLScriptPath": "../DataProcessing/dimQualityMeasureprocessing.sql",
+      "MergeScriptPath": "../DataUpdate/dimQualityMeasureupdate.sql"
+    }
+  ]
+}

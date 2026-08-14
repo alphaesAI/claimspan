@@ -1,0 +1,17 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "dimensionMember",
+      "DestinationTable": "claimsprocessing.gold.gold_dimmember",
+      "SourceTables": [
+        {
+          "Entity": "member",
+          "SourceTable": "claimsprocessing.silver.silver_member",
+          "SourceFormat": "delta"
+        }
+      ],
+      "SQLScriptPath": "../DataProcessing/dimMemberprocessing.sql",
+      "MergeScriptPath": "../DataUpdate/dimMemberupdate.sql"
+    }
+  ]
+}

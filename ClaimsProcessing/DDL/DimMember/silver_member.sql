@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_member (
- BISInternalPersonID string
+ ESAIInternalPersonID string
 ,UniqueRecord string 
 ,ClientID  string
 ,FileID  int

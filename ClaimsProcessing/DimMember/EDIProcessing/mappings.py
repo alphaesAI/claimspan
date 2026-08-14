@@ -4,11 +4,11 @@ Verified against EDI parser output structure
 """
 
 MAPPINGS = {
-    "name": "Member 7.12 Comprehensive Schema Mapping",
+    "name": "Member Comprehensive Schema Mapping",
     "mapping_type": "only_mapped",
     
     "expressions": {
-        # ============================================================
+        # ============================================================ NM1 
         # CORE IDENTIFIERS
         # ============================================================
         "UNIQUEPERSONKEY": "detail.transaction_set_header_loop.transaction_set_header_NM1[0].insured_id",

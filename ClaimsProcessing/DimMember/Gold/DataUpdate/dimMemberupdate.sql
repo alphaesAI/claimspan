@@ -3,19 +3,19 @@ USING (
     SELECT *
     FROM (
         SELECT NULL AS mID, a.*
-        FROM tempSQLScript a
+        FROM tempMemberSQLScript a
         JOIN DestinationTable t 
-            ON a.BISInternalPersonID = t.BISInternalPersonID
+            ON a.ESAIInternalPersonID = t.ESAIInternalPersonID
            AND a.memberKey <> t.memberKey
            AND t.isCurrent = TRUE
         
         UNION ALL
         
-        SELECT a.BISInternalPersonID AS mID, a.*
-        FROM tempSQLScript a
+        SELECT a.ESAIInternalPersonID AS mID, a.*
+        FROM tempMemberSQLScript a
     )
 ) s
-ON s.mID = t.BISInternalPersonID
+ON s.mID = t.ESAIInternalPersonID
 
 WHEN MATCHED AND s.memberKey <> t.memberKey AND t.isCurrent = TRUE THEN 
     UPDATE SET    
@@ -25,7 +25,7 @@ WHEN MATCHED AND s.memberKey <> t.memberKey AND t.isCurrent = TRUE THEN
 WHEN NOT MATCHED THEN 
     INSERT (
         memberKey,
-        BISInternalPersonID,
+        ESAIInternalPersonID,
         uniquePersonKey,
         planMemberID,
         subscriberID,
@@ -87,7 +87,7 @@ WHEN NOT MATCHED THEN
     )
     VALUES (
         s.memberKey,
-        s.BISInternalPersonID,
+        s.ESAIInternalPersonID,
         s.uniquePersonKey,
         s.planMemberID,
         s.subscriberID,
