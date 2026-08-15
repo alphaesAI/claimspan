@@ -133,19 +133,18 @@ df_dim_hcc = df_xref.select("hccNumber", "hccVersion", "hccType", "hccEffectiveY
     ) \
     .withColumn("hashKey", col("hccKey"))
 
-# Save to Delta Tables in claimsprocessing catalog
-spark.sql("CREATE DATABASE IF NOT EXISTS claimsprocessing.gold")
-df_xref_final.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimsprocessing.gold.gold_icdhccxref")
-df_dim_hcc.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimsprocessing.gold.gold_dimhcc")
+# Save to Delta Tables in claimspan catalog
+spark.sql("CREATE DATABASE IF NOT EXISTS claimspan.gold")
+df_xref_final.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimspan.gold.gold_icdhccxref")
+df_dim_hcc.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimspan.gold.gold_dimhcc")
 
 # Print Final Production Counts per Version
-count_xref = spark.table("claimsprocessing.gold.gold_icdhccxref").count()
-count_hcc = spark.table("claimsprocessing.gold.gold_dimhcc").count()
+count_xref = spark.table("claimspan.gold.gold_icdhccxref").count()
+count_hcc = spark.table("claimspan.gold.gold_dimhcc").count()
 
 print(f"============================================================")
 print(f"Successfully executed Full Master Production CMS Seeding!")
 print(f"Total Crosswalk Mappings (gold_icdhccxref): {count_xref}")
 print(f"Total Unique HCC Categories (gold_dimhcc): {count_hcc}")
 print(f"============================================================")
-
 

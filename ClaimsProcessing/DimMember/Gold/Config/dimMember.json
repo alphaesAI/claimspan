@@ -2,11 +2,11 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "dimensionMember",
-      "DestinationTable": "claimsprocessing.gold.gold_dimmember",
+      "DestinationTable": "claimspan.gold.gold_dimmember",
       "SourceTables": [
         {
           "Entity": "member",
-          "SourceTable": "claimsprocessing.silver.silver_member",
+          "SourceTable": "claimspan.silver.member",
           "SourceFormat": "delta"
         }
       ],
