@@ -2,11 +2,11 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "dimQualityYearMonth",
-      "DestinationTable": "claimsprocessing.gold.gold_dimqualityyearmonth",
+      "DestinationTable": "claimspan.gold.gold_dimqualityyearmonth",
       "SourceTables": [
         {
           "Entity": "GapsInCare",
-          "SourceTable": "claimsprocessing.silver.silver_gapsincare",
+          "SourceTable": "claimspan.silver.silver_gapsincare",
           "SourceFormat": "delta"
         }       
       ],
