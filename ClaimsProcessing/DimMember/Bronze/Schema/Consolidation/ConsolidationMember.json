@@ -10,7 +10,7 @@
       "selectColumns": [
         {
           "SourceColumn": "UNIQUEPERSONKEY",
-          "DestinationColumn": "id",
+          "DestinationColumn": "identifier_uniquepersonkey",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
@@ -74,19 +74,6 @@
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
-        address:
-            system: permanent address 1
-            city: new york
-            code:8934230
-
-            system: permanent address 2
-            city: jersy
-            code: 34235
-
-        address_permanent_address_1
-        address_city_1
-        address_code_1
-        address_permanent_address_2
         {
           "SourceColumn": "PERMANENTCOUNTY",
           "DestinationColumn": "address_permanent_district",

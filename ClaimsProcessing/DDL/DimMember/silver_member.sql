@@ -1,94 +1,69 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_member (
- -- Operational & Ingestion Metadata (Kept business naming)
-  esaiInternalPersonID string
-, uniqueRecord string 
-, clientID string
-, fileID int
-, loadDateTime date
-, fileLayoutID int
-, fileLayoutDescription string
-, pmup string
-, isCurrentPMUP int
-, hashKey string
-
--- Exact FHIR Patient/Coverage Top-Level Fields
-, id string                                      -- Patient.id
-, active boolean                                 -- Patient.active
-, gender string                                  -- Patient.gender
-, birthDate date                                 -- Patient.birthDate
-, deceasedDate date                              -- Patient.deceasedDate (or deceasedDateTime)
-
--- Patient.identifier array 
--- Consolidates: UniquePersonKey, PlanMemberID, EnrolleeUniqueID, MedicaidID, MaskedMemberID, and AlternateKeys 1-10
-, identifier ARRAY<STRUCT<
-    use: string,
-    system: string,
-    value: string
-  >>
-
--- Patient.name array
--- Consolidates: FirstName, LastName, MiddleInitial
-, name ARRAY<STRUCT<
-    use: string,
-    text: string,
-    family: string,
-    given: ARRAY<string>
-  >>
-
--- Patient.address array
--- Consolidates: Permanent (home) and Mailing (billing) lines, cities, states, zip codes, and counties
-, address ARRAY<STRUCT<
-    use: string,
-    type: string,
-    text: string,
-    line: ARRAY<string>,
-    city: string,
-    district: string,                            -- FHIR uses district for County
-    state: string,
-    postalCode: string
-  >>
-
--- Patient.telecom array
--- Consolidates: PhoneNumber, Email, Fax
-, telecom ARRAY<STRUCT<
-    system: string,
-    value: string,
-    use: string
-  >>
-
--- Patient.contact array
--- Consolidates: CaretakerFirstName, CaretakerLastName, CaretakerMiddleInitial
-, contact ARRAY<STRUCT<
-    relationship: ARRAY<STRUCT<coding: ARRAY<STRUCT<system: string, code: string, display: string>>, text: string>>,
-    name: STRUCT<use: string, family: string, given: ARRAY<string>>
-  >>
-
--- Patient.communication array
--- Consolidates: SpokenLanguage, WrittenLanguage, OtherLanguage, and source codes
-, communication ARRAY<STRUCT<
-    language: STRUCT<
-      coding: ARRAY<STRUCT<system: string, code: string, display: string>>,
-      text: string
-    >,
-    preferred: boolean
-  >>
-
--- Patient.extension array
--- Consolidates: RaceCode, EthnicityCode, USCitizen, EnrolleeEducation, EnrolleeEmployment
-, extension ARRAY<STRUCT<
-    url: string,
-    valueCode: string,
-    valueString: string,
-    extension: ARRAY<STRUCT<url: string, valueCoding: STRUCT<system: string, code: string, display: string>, valueString: string>>
-  >>
-
--- Coverage Resource fields
-, subscriberId string                             -- Coverage.subscriberId
-, beneficiary string                             -- Coverage.beneficiary Reference ID
-
--- Product context mapped via a dynamic type
-, coverageProduct STRUCT<
-    id: string,
-    type: string
-  >
+CREATE TABLE IF NOT EXISTS claimspan.silver.silver_member (
+  ESAIInternalPersonID string
+, UniqueRecord string
+, ClientID string
+, FileID int
+, LoadDateTime date
+, FileLayoutID int
+, FileLayoutDescription string
+, identifier_enrolleeUniqueID string
+, identifier_planMemberID string
+, identifier_subscriberID string
+, identifier_beneficiaryID string
+, name_family string
+, name_given_first string
+, name_given_middle string
+, birthDate string
+, deceasedDateTime string
+, gender string
+, address_permanent_line1 string
+, address_permanent_line2 string
+, address_permanent_city string
+, address_permanent_district string
+, address_permanent_state string
+, address_permanent_postalCode string
+, address_mailing_line1 string
+, address_mailing_line2 string
+, address_mailing_city string
+, address_mailing_state string
+, address_mailing_postalCode string
+, address_mailing_district string
+, telecom_phone_home string
+, telecom_email string
+, identifier_medicaidID string
+, telecom_fax string
+, extension_race_text string
+, extension_race_dataSource string
+, contact_caretaker_name_given_first string
+, contact_caretaker_name_family string
+, contact_caretaker_name_given_middle string
+, extension_ethnicity_ombCategory_code string
+, extension_ethnicity_dataSource string
+, communication_spokenLanguage_text string
+, communication_spokenLanguage_codeSystem string
+, communication_writtenLanguage_code string
+, communication_writtenLanguage_codeSystem string
+, communication_otherLanguage_text string
+, communication_otherLanguage_codeSystem string
+, extension_usCitizenStatus string
+, identifier_alternateKey1 string
+, identifier_alternateKey2 string
+, identifier_alternateKey3 string
+, identifier_alternateKey4 string
+, identifier_alternateKey5 string
+, identifier_alternateKey6 string
+, identifier_alternateKey7 string
+, identifier_alternateKey8 string
+, identifier_alternateKey9 string
+, identifier_alternateKey10 string
+, extension_maskedMemberID string
+, extension_enrolleeEducation string
+, extension_enrolleeEmployment string
+, PMUP string
+, IsCurrentPMUP int
+, extension_coverageProduct_id string
+, name_prefix string
+, name_suffix string
+, name_text string
+, HashKey string
 ) USING delta;

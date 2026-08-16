@@ -1,9 +1,7 @@
--- Updated to use FHIR-based silver table: claimsprocessing.silver.fhirperson
 MERGE INTO DestinationTable t
 USING (
     SELECT *
     FROM (
-        -- Records where member attributes changed: expire current row
         SELECT NULL AS mID, a.*
         FROM tempMemberSQLScript a
         JOIN DestinationTable t 
@@ -13,7 +11,6 @@ USING (
         
         UNION ALL
         
-        -- New or updated records to insert
         SELECT a.ESAIInternalPersonID AS mID, a.*
         FROM tempMemberSQLScript a
     )
@@ -29,13 +26,17 @@ WHEN NOT MATCHED THEN
     INSERT (
         memberKey,
         ESAIInternalPersonID,
-        identifier_enrolleeUniqueID,
+        identifier_uniquepersonkey,
         identifier_planMemberID,
         identifier_subscriberID,
         identifier_beneficiaryID,
         name_family,
         name_given_first,
         name_given_middle,
+        name_prefix,
+        name_suffix,
+        name_text,
+        identifier_enrolleeUniqueID,
         birthDate,
         deceasedDateTime,
         gender,
@@ -82,21 +83,25 @@ WHEN NOT MATCHED THEN
         extension_maskedMemberID,
         extension_enrolleeEducation,
         extension_enrolleeEmployment,
+        extension_coverageProduct_id,
         effectiveStartDate,
         effectiveEndDate,
-        isCurrent,
-        extension_coverageProduct_id
+        isCurrent
     )
     VALUES (
         s.memberKey,
         s.ESAIInternalPersonID,
-        s.identifier_enrolleeUniqueID,
+        s.identifier_uniquepersonkey,
         s.identifier_planMemberID,
         s.identifier_subscriberID,
         s.identifier_beneficiaryID,
         s.name_family,
         s.name_given_first,
         s.name_given_middle,
+        s.name_prefix,
+        s.name_suffix,
+        s.name_text,
+        s.identifier_enrolleeUniqueID,
         s.birthDate,
         s.deceasedDateTime,
         s.gender,
@@ -143,8 +148,8 @@ WHEN NOT MATCHED THEN
         s.extension_maskedMemberID,
         s.extension_enrolleeEducation,
         s.extension_enrolleeEmployment,
+        s.extension_coverageProduct_id,
         s.effectiveStartDate,
         s.effectiveEndDate,
-        s.isCurrent,
-        s.extension_coverageProduct_id
+        s.isCurrent
     );

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_dimQualityMeasure (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_dimQualityMeasure (
  qualityMeasureKey  int
 ,measureYear  int
 ,qualityMeasureCode string

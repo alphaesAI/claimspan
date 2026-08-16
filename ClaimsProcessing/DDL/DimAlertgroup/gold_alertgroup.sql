@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_dimalertgroup(
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_dimalertgroup(
  alertGroupKey  int
 ,alertGroupCode  string
 ,alertGroupDescription  string

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_memberRevenueGap (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_memberRevenueGap (
    planMemberID         string
   ,hccNumber            string
   ,reportMonth          string

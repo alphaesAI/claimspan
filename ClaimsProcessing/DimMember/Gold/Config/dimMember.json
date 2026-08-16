@@ -6,7 +6,7 @@
       "SourceTables": [
         {
           "Entity": "member",
-          "SourceTable": "claimspan.silver.member",
+          "SourceTable": "claimspan.silver.silver_member",
           "SourceFormat": "delta"
         }
       ],

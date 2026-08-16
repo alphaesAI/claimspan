@@ -1,72 +1,57 @@
 WITH memAll AS (
     SELECT 
         *,
-        ROW_NUMBER() OVER(PARTITION BY ESAIInternalPersonID ORDER BY FileID DESC) as rowNum
-    FROM claimsprocessing.silver.fhirperson
+        ROW_NUMBER() OVER(PARTITION BY ESAIInternalPersonID ORDER BY LoadDateTime DESC) as rowNum
+    FROM member
 ),
 
 mem AS (
     SELECT 
-        -- Master Key & Business Identifiers (FHIR fields)
         ESAIInternalPersonID,
-        identifier_enrolleeUniqueID,
+        identifier_uniquepersonkey,
         identifier_planMemberID,
         identifier_subscriberID,
         identifier_beneficiaryID,
-        
-        -- Name fields (FHIR)
         name_family,
         name_given_first,
         name_given_middle,
-
+        name_prefix,
+        name_suffix,
+        name_text,
+        identifier_enrolleeUniqueID,
         birthDate,
         deceasedDateTime,
         gender,
-        
-        -- Address fields (FHIR)
         address_permanent_line1,
         address_permanent_line2,
         address_permanent_city,
         address_permanent_district,
         address_permanent_state,
         address_permanent_postalCode,
-        
         address_mailing_line1,
         address_mailing_line2,
         address_mailing_city,
         address_mailing_state,
         address_mailing_postalCode,
         address_mailing_district,
-        
-        -- Contact fields (FHIR)
         telecom_phone_home,
         telecom_email,
+        identifier_medicaidID,
         telecom_fax,
-        
-        -- Language fields (FHIR)
+        extension_race_text,
+        extension_race_dataSource,
+        contact_caretaker_name_given_first,
+        contact_caretaker_name_family,
+        contact_caretaker_name_given_middle,
+        extension_ethnicity_ombCategory_code,
+        extension_ethnicity_dataSource,
         communication_spokenLanguage_text,
         communication_spokenLanguage_codeSystem,
         communication_writtenLanguage_code,
         communication_writtenLanguage_codeSystem,
         communication_otherLanguage_text,
         communication_otherLanguage_codeSystem,
-
-        -- Demographics & Other fields (FHIR)
-        extension_race_text,
-        extension_race_dataSource,
-        extension_ethnicity_ombCategory_code,
-        extension_ethnicity_dataSource,
-        contact_caretaker_name_given_first,
-        contact_caretaker_name_family,
-        contact_caretaker_name_given_middle,
-        identifier_medicaidID,
         extension_usCitizenStatus AS isUSCitizen,
-        extension_maskedMemberID,
-        extension_enrolleeEducation,
-        extension_enrolleeEmployment,
-        extension_coverageProduct_id,
-
-        -- Alternate Keys (FHIR)
         identifier_alternateKey1,
         identifier_alternateKey2,
         identifier_alternateKey3,
@@ -76,7 +61,11 @@ mem AS (
         identifier_alternateKey7,
         identifier_alternateKey8,
         identifier_alternateKey9,
-        identifier_alternateKey10
+        identifier_alternateKey10,
+        extension_maskedMemberID,
+        extension_enrolleeEducation,
+        extension_enrolleeEmployment,
+        extension_coverageProduct_id
     FROM memAll
     WHERE rowNum = 1
 )
@@ -84,13 +73,17 @@ mem AS (
 SELECT 
     CAST(HASH(
         IFNULL(ESAIInternalPersonID, ""), "|",
-        IFNULL(identifier_enrolleeUniqueID, ""), "|",
+        IFNULL(identifier_uniquepersonkey, ""), "|",
         IFNULL(identifier_planMemberID, ""), "|",
         IFNULL(identifier_subscriberID, ""), "|",
         IFNULL(identifier_beneficiaryID, ""), "|",
         IFNULL(name_family, ""), "|",
         IFNULL(name_given_first, ""), "|",
         IFNULL(name_given_middle, ""), "|",
+        IFNULL(name_prefix, ""), "|",
+        IFNULL(name_suffix, ""), "|",
+        IFNULL(name_text, ""), "|",
+        IFNULL(identifier_enrolleeUniqueID, ""), "|",
         IFNULL(CAST(birthDate AS STRING), ""), "|",
         IFNULL(CAST(deceasedDateTime AS STRING), ""), "|",
         IFNULL(gender, ""), "|",
@@ -119,6 +112,10 @@ SELECT
         IFNULL(extension_ethnicity_dataSource, ""), "|",
         IFNULL(communication_spokenLanguage_text, ""), "|",
         IFNULL(communication_spokenLanguage_codeSystem, ""), "|",
+        IFNULL(communication_writtenLanguage_code, ""), "|",
+        IFNULL(communication_writtenLanguage_codeSystem, ""), "|",
+        IFNULL(communication_otherLanguage_text, ""), "|",
+        IFNULL(communication_otherLanguage_codeSystem, ""), "|",
         IFNULL(isUSCitizen, ""), "|",
         IFNULL(identifier_alternateKey1, ""), "|",
         IFNULL(identifier_alternateKey2, ""), "|",

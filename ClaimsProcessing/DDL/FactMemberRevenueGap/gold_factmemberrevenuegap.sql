@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_factmemberrevenuegap (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_factmemberrevenuegap (
    pecYearMonthKey             int
   ,clientKey                  int
   ,memberKey                  bigint

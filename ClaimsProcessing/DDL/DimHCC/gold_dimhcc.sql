@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_dimhcc (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_dimhcc (
  HCCNumber  string
 ,HCCDescription  string
 ,HCCVersion  string
