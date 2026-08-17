@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE claimspan.silver.silver_gapsincare (
+CREATE TABLE IF NOT EXISTS claimspan.silver.silver_gapsincare (
   gapsInCareID BIGINT
 , yearMonth int
 , identifier_planMemberID string

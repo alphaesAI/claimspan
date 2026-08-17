@@ -2,36 +2,36 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "factGapsInCare",
-      "DestinationTable": "claimsprocessing.gold.factgapsincare",
+      "DestinationTable": "claimspan.gold.factgapsincare",
       "SourceTables": [
         {
           "Entity": "silver_gapsincare",
-          "SourceTable": "claimsprocessing.silver.silver_gapsincare",
+          "SourceTable": "claimspan.silver.silver_gapsincare",
           "SourceFormat": "delta"
         },
         {
           "Entity": "gold_dimQualityYearMonth",
-          "SourceTable": "claimsprocessing.gold.gold_dimqualityyearmonth",
+          "SourceTable": "claimspan.gold.gold_dimqualityyearmonth",
           "SourceFormat": "delta"
         },
         {
           "Entity": "gold_dimMember",
-          "SourceTable": "claimsprocessing.gold.gold_dimmember",
+          "SourceTable": "claimspan.gold.gold_dimmember",
           "SourceFormat": "delta"
         },
         {
           "Entity": "gold_dimQualityMeasure",
-          "SourceTable": "claimsprocessing.gold.gold_dimqualitymeasure",
+          "SourceTable": "claimspan.gold.gold_dimqualitymeasure",
           "SourceFormat": "delta"
         },
         {
           "Entity": "gold_dimQualityEvent",
-          "SourceTable": "claimsprocessing.gold.gold_dimqualityevent",
+          "SourceTable": "claimspan.gold.gold_dimqualityevent",
           "SourceFormat": "delta"
         },
         {
           "Entity": "gold_dimdate",
-          "SourceTable": "claimsprocessing.gold.gold_dimdate",
+          "SourceTable": "claimspan.gold.gold_dimdate",
           "SourceFormat": "delta"
         }
       ],

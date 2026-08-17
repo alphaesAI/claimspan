@@ -1,7 +1,7 @@
 SELECT
     GapsInCareID AS gapsInCareID,
     YearMonth AS yearMonth,
-    MemberKey AS planMemberID,
+    MemberKey AS identifier_planMemberID,
     MeasureID AS measureID,
     SubMeasureID AS subMeasureID,
     MeasureCode AS measureCode,
@@ -10,8 +10,8 @@ SELECT
     DenomCnt AS denomCnt,
     EventName AS eventName,
     DateOfService AS dateOfService,
-    ProviderKey AS providerID,
-    ProviderName AS providerName,
+    ProviderKey AS practitioner_identifier,
+    ProviderName AS practitioner_name,
     DataLoadName AS dataLoadName,
     DataFileName AS dataFileName,
     ExpectedRate AS expectedRate,
@@ -29,7 +29,7 @@ SELECT
     FlaggedEventID AS flaggedEventID,
     PharmacyQualGapID AS pharmacyQualGapID,
     PharmacyQualGapSUPDID AS pharmacyQualGapSUPDID,
-    Claimnumber AS claimNumber,
+    Claimnumber AS identifier_claimnumber,
     CreationDateTime AS creationDateTime,
     HBTest AS hbTest,
     HASH(CONCAT(

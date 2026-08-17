@@ -1,4 +1,4 @@
-MERGE INTO claimsprocessing.gold.factgapsincare t
+MERGE INTO claimspan.gold.factgapsincare t
 USING (
     SELECT * FROM tempFactGapsInCareSQLScript
 ) s
@@ -21,7 +21,7 @@ WHEN MATCHED AND s.fullRowHash <> t.fullRowHash THEN
         t.lastHBDateKey = s.lastHBDateKey,
         t.lastBPDia = s.lastBPDia,
         t.lastBPSys = s.lastBPSys,
-        t.claimNumber = s.claimNumber,
+        t.identifier_claimnumber = s.identifier_claimnumber,
         t.hbTest = s.hbTest,
         t.fullRowHash = s.fullRowHash
 
@@ -43,7 +43,7 @@ WHEN NOT MATCHED THEN
         lastHBDateKey,
         lastBPDia,
         lastBPSys,
-        claimNumber,
+        identifier_claimnumber,
         hbTest,
         fullRowHash
     )
@@ -64,7 +64,7 @@ WHEN NOT MATCHED THEN
         s.lastHBDateKey,
         s.lastBPDia,
         s.lastBPSys,
-        s.claimNumber,
+        s.identifier_claimnumber,
         s.hbTest,
         s.fullRowHash
     );

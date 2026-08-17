@@ -8,7 +8,7 @@ WITH SourceRaw AS (
         gic.numerCnt,
         gic.denomCnt,
         IFNULL(dimDate1.dateKey, -1) AS dateOfServiceDateKey,
-        gic.providerID AS gapsEventProviderKey,
+        gic.practitioner_identifier AS gapsEventProviderKey,
         gic.expectedRate,
         IFNULL(dimDate2.dateKey, -1) AS serviceNeededByDateKey,
         gic.PDC AS pdc,
@@ -16,13 +16,13 @@ WITH SourceRaw AS (
         IFNULL(dimDate3.dateKey, -1) AS lastHBDateKey,
         gic.lastBPDia,
         gic.lastBPSys,
-        gic.claimNumber,
+        gic.identifier_claimnumber,
         gic.hbTest   
     FROM silver_gapsincare gic
     LEFT JOIN gold_dimQualityYearMonth dimQualityYearMonth
         ON gic.yearMonth = CONCAT(dimQualityYearMonth.yearNumber, LPAD(dimQualityYearMonth.monthNumber, 2, '0'))
     LEFT JOIN gold_dimMember dimMember
-        ON gic.planMemberID = dimMember.planMemberID
+        ON gic.identifier_planMemberID = dimMember.identifier_planMemberID
        AND dimMember.isCurrent = TRUE
     LEFT JOIN gold_dimQualityMeasure dimQualityMeasure
         ON gic.measurecode = dimQualityMeasure.qualityMeasureCode
@@ -55,7 +55,7 @@ SELECT DISTINCT
     lastHBDateKey,
     lastBPDia,
     lastBPSys,
-    claimNumber,
+    identifier_claimnumber,
     hbTest,
     SHA2(CONCAT_WS('|', 
         qualityYearMonthKey,
@@ -73,7 +73,7 @@ SELECT DISTINCT
         lastHBDateKey,
         IFNULL(lastBPDia, '|'),
         IFNULL(lastBPSys, '|'),
-        IFNULL(claimNumber, '|'),
+        IFNULL(identifier_claimnumber, '|'),
         IFNULL(hbTest, '|')
     ), 256) AS fullRowHash
 FROM SourceRaw;
