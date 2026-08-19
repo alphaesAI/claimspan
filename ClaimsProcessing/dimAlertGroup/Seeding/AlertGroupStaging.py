@@ -34,9 +34,8 @@ df_raw = spark.read.format("csv").option("header", "true").schema(schema).load(r
 print(f"Loaded {df_raw.count()} raw AlertGroup rows.")
 
 # 2. Write to Delta Table in Silver Catalog
-spark.sql("CREATE DATABASE IF NOT EXISTS claimsprocessing.silver")
-df_raw.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimsprocessing.silver.silver_alertgroup_raw")
+spark.sql("CREATE DATABASE IF NOT EXISTS claimspan.silver")
+df_raw.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("claimspan.silver.silver_alertgroup_raw")
 
-print("Successfully seeded AlertGroup reference data into claimsprocessing.silver.silver_alertgroup_raw!")
-
+print("Successfully seeded AlertGroup reference data into claimspan.silver.silver_alertgroup_raw!")
 

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_dimclient (
+CREATE OR REPLACE TABLE claimspan.gold.gold_dimclient (
  clientKey  int
 ,clientCode  string
 ,clientName  string

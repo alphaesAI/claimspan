@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_hcc (
+CREATE TABLE IF NOT EXISTS claimspan.silver.silver_hcc (
  HCCNumber  string
 ,HCCDescription  string
 ,HCCVersion  string

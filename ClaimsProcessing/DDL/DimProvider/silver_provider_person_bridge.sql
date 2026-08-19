@@ -1,22 +1,19 @@
--- DDL for silver.provider_person_bridge table
--- DDL for silver.provider_person_bridge table
---Staging bridge table for deduplicating providers
-CREATE TABLE IF NOT EXISTS new.silver.provider_person_bridge (
-    BISInternalPersonID string,
-    IsCurrent string,
-    UniqueRecord string,
-    FileLayoutID int,
-    FileId bigint,
-    LastName string,
-    FirstName string,
-    NPI string,
-    DEA string,
-    PayorID string,
-    ProviderID string,
+CREATE OR REPLACE TABLE claimspan.silver.silver_providerpersonbridge (
+    ESAIInternalProviderID string,
+    isCurrent string,
+    uniqueRecord string,
+    fileLayoutID int,
+    fileID bigint,
+    name_family string,
+    name_given_first string,
+    identifier_npi string,
+    identifier_providerDEA string,
+    identifier_payerID string,
+    identifier_providerID string,
     hashKey string,
-    IsCurrentProviderID bigint,
-    IsCurrentNPI bigint,
-    IsOriginalProviderID int,
-    PMUP string,
-    IsCurrentPMUP int
+    isCurrentProviderID bigint,
+    isCurrentNPI bigint,
+    isOriginalProviderID int,
+    pmup string,
+    isCurrentPMUP int
 ) USING delta;

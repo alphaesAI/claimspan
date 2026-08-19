@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.silver.silver_client_metadata (
+CREATE OR REPLACE TABLE claimspan.silver.silver_client_metadata (
  clientCode  string
 ,subClientCode  string
 ) USING delta;

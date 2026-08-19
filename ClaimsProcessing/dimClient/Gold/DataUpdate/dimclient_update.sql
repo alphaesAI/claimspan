@@ -1,4 +1,4 @@
-MERGE INTO claimsprocessing.gold.gold_dimclient AS client
+MERGE INTO claimspan.gold.gold_dimclient AS client
 USING temp_updates AS updates
 ON client.clientKey = updates.clientKey
 WHEN MATCHED AND (

@@ -4,13 +4,13 @@ SELECT
   ,a.*
 FROM tempSQLScript a
   INNER JOIN DestinationTable t 
-    ON a.providerID = t.providerID
+    ON a.ESAIInternalProviderID = t.ESAIInternalProviderID
       AND a.providerKey <> t.providerKey
       AND t.isCurrent = 1
 ),
 AllProvidersFromSource AS(
 SELECT 
-   a.providerID AS pID
+   a.ESAIInternalProviderID AS pID
   ,a.*
 FROM tempSQLScript a
 ),
@@ -23,7 +23,7 @@ FROM AllProvidersFromSource
 )
 MERGE INTO DestinationTable t 
 USING (SELECT * FROM ProvidersCombined) s	
-   ON s.pID = t.providerID 
+   ON s.pID = t.ESAIInternalProviderID 
 WHEN MATCHED AND s.providerKey <> t.providerKey AND t.isCurrent = 1 THEN UPDATE SET	
 	 t.effectiveEndDate = current_date() 
 	,t.isCurrent = 0 
@@ -33,18 +33,18 @@ WHEN NOT MATCHED THEN INSERT
   ,effectiveStartDate
   ,effectiveEndDate
   ,isCurrent
-  ,providerID
-  ,npi
-  ,tin
-  ,lastName
-  ,firstName
-  ,middleName
-  ,phoneNumber
-  ,address1
-  ,address2
-  ,city
-  ,state
-  ,zipCode
+  ,ESAIInternalProviderID
+  ,identifier_npi
+  ,identifier_tin
+  ,name_family
+  ,name_given_first
+  ,name_given_middle
+  ,telecom_phone
+  ,address_line1
+  ,address_line2
+  ,address_city
+  ,address_state
+  ,address_postalCode
   ,practiceCode
   ,practiceName
   ,providerOrgCode
@@ -65,45 +65,45 @@ WHEN NOT MATCHED THEN INSERT
   ,taxonomyCode5
   ,hpSpecialtyCode5
   ,advProviderSpecialtyCode5
-  ,isPrescribePrivilege
-  ,providerDEA
-  ,payerID
-  ,isContracted
-  ,providerHAI
-  ,hospitalID
-  ,isExcludedFromProviderReporting
-  ,altProvReporting1
-  ,altProvReporting2
-  ,altProvReporting3
-  ,altProvReporting4
-  ,altProvReporting5
-  ,altProvReporting6
-  ,altProvReporting7
-  ,altProvReporting8
-  ,altProvReporting9
-  ,altProvReporting10
-  ,programType
-  ,practiceTargetedStatus
-  ,ProductID
-  ,ProviderType
+  ,extension_isPrescribePrivilege
+  ,identifier_providerDEA
+  ,identifier_payerID
+  ,extension_isContracted
+  ,extension_providerHAI
+  ,identifier_hospitalID
+  ,extension_isExcludedFromProviderReporting
+  ,identifier_alternateKey1
+  ,identifier_alternateKey2
+  ,identifier_alternateKey3
+  ,identifier_alternateKey4
+  ,identifier_alternateKey5
+  ,identifier_alternateKey6
+  ,identifier_alternateKey7
+  ,identifier_alternateKey8
+  ,identifier_alternateKey9
+  ,identifier_alternateKey10
+  ,extension_programType
+  ,extension_practiceTargetedStatus
+  ,extension_ProductID
+  ,extension_ProviderType
   ) 
  VALUES ( 
    s.providerKey
   ,s.effectiveStartDate
   ,s.effectiveEndDate
   ,s.isCurrent
-  ,s.providerID
-  ,s.npi
-  ,s.tin
-  ,s.lastName
-  ,s.firstName
-  ,s.middleName
-  ,s.phoneNumber
-  ,s.address1
-  ,s.address2
-  ,s.city
-  ,s.state
-  ,s.zipCode
+  ,s.ESAIInternalProviderID
+  ,s.identifier_npi
+  ,s.identifier_tin
+  ,s.name_family
+  ,s.name_given_first
+  ,s.name_given_middle
+  ,s.telecom_phone
+  ,s.address_line1
+  ,s.address_line2
+  ,s.address_city
+  ,s.address_state
+  ,s.address_postalCode
   ,s.practiceCode
   ,s.practiceName
   ,s.providerOrgCode
@@ -124,25 +124,25 @@ WHEN NOT MATCHED THEN INSERT
   ,s.taxonomyCode5
   ,s.hpSpecialtyCode5
   ,s.advProviderSpecialtyCode5
-  ,s.isPrescribePrivilege
-  ,s.providerDEA
-  ,s.payerID
-  ,s.isContracted
-  ,s.providerHAI
-  ,s.hospitalID
-  ,s.isExcludedFromProviderReporting
-  ,s.altProvReporting1
-  ,s.altProvReporting2
-  ,s.altProvReporting3
-  ,s.altProvReporting4
-  ,s.altProvReporting5
-  ,s.altProvReporting6
-  ,s.altProvReporting7
-  ,s.altProvReporting8
-  ,s.altProvReporting9
-  ,s.altProvReporting10
-  ,s.programType
-  ,s.practiceTargetedStatus
-  ,s.ProductID
-  ,s.ProviderType
+  ,s.extension_isPrescribePrivilege
+  ,s.identifier_providerDEA
+  ,s.identifier_payerID
+  ,s.extension_isContracted
+  ,s.extension_providerHAI
+  ,s.identifier_hospitalID
+  ,s.extension_isExcludedFromProviderReporting
+  ,s.identifier_alternateKey1
+  ,s.identifier_alternateKey2
+  ,s.identifier_alternateKey3
+  ,s.identifier_alternateKey4
+  ,s.identifier_alternateKey5
+  ,s.identifier_alternateKey6
+  ,s.identifier_alternateKey7
+  ,s.identifier_alternateKey8
+  ,s.identifier_alternateKey9
+  ,s.identifier_alternateKey10
+  ,s.extension_programType
+  ,s.extension_practiceTargetedStatus
+  ,s.extension_ProductID
+  ,s.extension_ProviderType
 )

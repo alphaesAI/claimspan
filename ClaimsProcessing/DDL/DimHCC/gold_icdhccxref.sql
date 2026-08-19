@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_icdhccxref (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_icdhccxref (
  icd                 string
 ,icdCodeType         string
 ,icdEffectiveYear    int

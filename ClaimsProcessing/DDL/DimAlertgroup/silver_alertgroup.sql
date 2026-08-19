@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimspan.silver.silver_alertgroup (
+CREATE OR REPLACE TABLE claimspan.silver.silver_alertgroup (
  alertGroupID  int
 ,alertGroupCode  string
 ,alertGroupDescription  string

@@ -1,17 +1,17 @@
 WITH ProviderHierarchy AS (
   SELECT 
-     pgr.PROVIDERID AS providerID
-    ,pgr.PROVIDERNPI AS npi
-    ,pgr.LOCATIONTIN AS tin
-    ,pgr.PROVIDERLASTNAME AS lastName
-    ,CAST(NULL AS string) AS firstName
-    ,CAST(NULL AS string) AS middleName
-    ,pgr.PHONENUMBER AS phoneNumber
-    ,pgr.LOCATIONADDRESS1 AS address1
-    ,pgr.LOCATIONADDRESS2 AS address2
-    ,pgr.LOCATIONCITY AS city
-    ,pgr.LOCATIONSTATE AS state
-    ,pgr.LOCATIONZIP AS zipCode
+     pgr.PROVIDERID AS ESAIInternalProviderID
+    ,pgr.PROVIDERNPI AS identifier_npi
+    ,pgr.LOCATIONTIN AS identifier_tin
+    ,pgr.PROVIDERLASTNAME AS name_family
+    ,CAST(NULL AS string) AS name_given_first
+    ,CAST(NULL AS string) AS name_given_middle
+    ,pgr.PHONENUMBER AS telecom_phone
+    ,pgr.LOCATIONADDRESS1 AS address_line1
+    ,pgr.LOCATIONADDRESS2 AS address_line2
+    ,pgr.LOCATIONCITY AS address_city
+    ,pgr.LOCATIONSTATE AS address_state
+    ,pgr.LOCATIONZIP AS address_postalCode
     ,pgr.LOCATIONID AS practiceCode
     ,pgr.LOCATIONDESC AS practiceName
     ,pgr.LOCATIONTIN AS poCode
@@ -32,27 +32,27 @@ WITH ProviderHierarchy AS (
     ,CAST(NULL AS string) AS taxonomyCode5
     ,CAST(NULL AS string) AS hpSpecialtyCode5
     ,CAST(NULL AS string) AS advProviderSpecialtyCode5
-    ,CAST(NULL AS string) AS isPrescribePrivilege
-    ,CAST(NULL AS string) AS providerDEA
-    ,CAST(NULL AS string) AS payerID
-    ,CAST(NULL AS string) AS isContracted
-    ,CAST(NULL AS string) AS providerHAI
-    ,CAST(NULL AS string) AS hospitalID
-    ,CAST(NULL AS string) AS isExcludedFromProviderReporting
-    ,CAST(NULL AS string) AS altProvReporting1
-    ,CAST(NULL AS string) AS altProvReporting2
-    ,CAST(NULL AS string) AS altProvReporting3
-    ,CAST(NULL AS string) AS altProvReporting4
-    ,CAST(NULL AS string) AS altProvReporting5
-    ,CAST(NULL AS string) AS altProvReporting6
-    ,CAST(NULL AS string) AS altProvReporting7
-    ,CAST(NULL AS string) AS altProvReporting8
-    ,CAST(NULL AS string) AS altProvReporting9
-    ,CAST(NULL AS string) AS altProvReporting10
-    ,'Targeted' AS programType
-    ,'New - Targeted' AS practiceTargetedStatus
-    ,CAST(NULL AS string) AS ProductID
-    ,CAST(NULL AS string) AS ProviderType
+    ,CAST(NULL AS string) AS extension_isPrescribePrivilege
+    ,CAST(NULL AS string) AS identifier_providerDEA
+    ,CAST(NULL AS string) AS identifier_payerID
+    ,CAST(NULL AS string) AS extension_isContracted
+    ,CAST(NULL AS string) AS extension_providerHAI
+    ,CAST(NULL AS string) AS identifier_hospitalID
+    ,CAST(NULL AS string) AS extension_isExcludedFromProviderReporting
+    ,CAST(NULL AS string) AS identifier_alternateKey1
+    ,CAST(NULL AS string) AS identifier_alternateKey2
+    ,CAST(NULL AS string) AS identifier_alternateKey3
+    ,CAST(NULL AS string) AS identifier_alternateKey4
+    ,CAST(NULL AS string) AS identifier_alternateKey5
+    ,CAST(NULL AS string) AS identifier_alternateKey6
+    ,CAST(NULL AS string) AS identifier_alternateKey7
+    ,CAST(NULL AS string) AS identifier_alternateKey8
+    ,CAST(NULL AS string) AS identifier_alternateKey9
+    ,CAST(NULL AS string) AS identifier_alternateKey10
+    ,'Targeted' AS extension_programType
+    ,'New - Targeted' AS extension_practiceTargetedStatus
+    ,CAST(NULL AS string) AS extension_ProductID
+    ,CAST(NULL AS string) AS extension_ProviderType
     ,ROW_NUMBER() OVER(PARTITION BY pgr.PROVIDERID ORDER BY pgr.STARTDATE DESC) AS RowNumber
   FROM provider_hierarchy pgr
 ),
@@ -63,21 +63,21 @@ ProviderHierarchyFiltered AS (
 ),
 CombinedProvider AS (
   SELECT 
-     p.providerID
+     p.ESAIInternalProviderID
     ,CURRENT_DATE() AS effectiveStartDate
     ,CAST(null AS date) AS effectiveEndDate
     ,1 AS isCurrent
-    ,p.npi
-    ,p.tin
-    ,p.lastName
-    ,p.firstName
-    ,p.middleName
-    ,p.phoneNumber
-    ,p.address1
-    ,p.address2
-    ,p.city
-    ,p.state
-    ,p.zipCode
+    ,p.identifier_npi
+    ,p.identifier_tin
+    ,p.name_family
+    ,p.name_given_first
+    ,p.name_given_middle
+    ,p.telecom_phone
+    ,p.address_line1
+    ,p.address_line2
+    ,p.address_city
+    ,p.address_state
+    ,p.address_postalCode
     ,p.practiceCode
     ,p.practiceName
     ,p.poCode AS providerOrgCode
@@ -98,44 +98,44 @@ CombinedProvider AS (
     ,p.taxonomyCode5
     ,p.hpSpecialtyCode5
     ,p.advProviderSpecialtyCode5
-    ,p.isPrescribePrivilege
-    ,p.providerDEA
-    ,p.payerID
-    ,p.isContracted
-    ,p.providerHAI
-    ,p.hospitalID
-    ,p.isExcludedFromProviderReporting
-    ,p.altProvReporting1
-    ,p.altProvReporting2
-    ,p.altProvReporting3
-    ,p.altProvReporting4
-    ,p.altProvReporting5
-    ,p.altProvReporting6
-    ,p.altProvReporting7
-    ,p.altProvReporting8
-    ,p.altProvReporting9
-    ,p.altProvReporting10
-    ,p.programType
-    ,p.practiceTargetedStatus
-    ,p.ProductID
-    ,p.ProviderType
+    ,p.extension_isPrescribePrivilege
+    ,p.identifier_providerDEA
+    ,p.identifier_payerID
+    ,p.extension_isContracted
+    ,p.extension_providerHAI
+    ,p.identifier_hospitalID
+    ,p.extension_isExcludedFromProviderReporting
+    ,p.identifier_alternateKey1
+    ,p.identifier_alternateKey2
+    ,p.identifier_alternateKey3
+    ,p.identifier_alternateKey4
+    ,p.identifier_alternateKey5
+    ,p.identifier_alternateKey6
+    ,p.identifier_alternateKey7
+    ,p.identifier_alternateKey8
+    ,p.identifier_alternateKey9
+    ,p.identifier_alternateKey10
+    ,p.extension_programType
+    ,p.extension_practiceTargetedStatus
+    ,p.extension_ProductID
+    ,p.extension_ProviderType
   FROM ProviderHierarchyFiltered p
 ),
 FinalProvider AS (
   SELECT 
       HASH(
-         IFNULL(p.providerID,""),"|"
-        ,IFNULL(p.npi,""),"|"
-        ,IFNULL(p.tin,""),"|"
-        ,IFNULL(p.lastName,""),"|"
-        ,IFNULL(p.firstName,""),"|"
-        ,IFNULL(p.middleName,""),"|"
-        ,IFNULL(p.phoneNumber,""),"|"
-        ,IFNULL(p.address1,""),"|"
-        ,IFNULL(p.address2,""),"|"
-        ,IFNULL(p.city,""),"|"
-        ,IFNULL(p.state,""),"|"
-        ,IFNULL(p.zipCode,""),"|"
+         IFNULL(p.ESAIInternalProviderID,""),"|"
+        ,IFNULL(p.identifier_npi,""),"|"
+        ,IFNULL(p.identifier_tin,""),"|"
+        ,IFNULL(p.name_family,""),"|"
+        ,IFNULL(p.name_given_first,""),"|"
+        ,IFNULL(p.name_given_middle,""),"|"
+        ,IFNULL(p.telecom_phone,""),"|"
+        ,IFNULL(p.address_line1,""),"|"
+        ,IFNULL(p.address_line2,""),"|"
+        ,IFNULL(p.address_city,""),"|"
+        ,IFNULL(p.address_state,""),"|"
+        ,IFNULL(p.address_postalCode,""),"|"
         ,IFNULL(p.practiceCode,""),"|"
         ,IFNULL(p.practiceName,""),"|"
         ,IFNULL(p.providerOrgCode,""),"|"
@@ -156,43 +156,43 @@ FinalProvider AS (
         ,IFNULL(p.taxonomyCode5,""),"|"
         ,IFNULL(p.hpSpecialtyCode5,""),"|"
         ,IFNULL(p.advProviderSpecialtyCode5,""),"|"
-        ,IFNULL(p.isPrescribePrivilege,""),"|"
-        ,IFNULL(p.providerDEA,""),"|"
-        ,IFNULL(p.payerID,""),"|"
-        ,IFNULL(p.isContracted,""),"|"
-        ,IFNULL(p.providerHAI,""),"|"
-        ,IFNULL(p.hospitalID,""),"|"
-        ,IFNULL(p.isExcludedFromProviderReporting,""),"|"
-        ,IFNULL(p.altProvReporting1,""),"|"
-        ,IFNULL(p.altProvReporting2,""),"|"
-        ,IFNULL(p.altProvReporting3,""),"|"
-        ,IFNULL(p.altProvReporting4,""),"|"
-        ,IFNULL(p.altProvReporting5,""),"|"
-        ,IFNULL(p.altProvReporting6,""),"|"
-        ,IFNULL(p.altProvReporting7,""),"|"
-        ,IFNULL(p.altProvReporting8,""),"|"
-        ,IFNULL(p.altProvReporting9,""),"|" 
-        ,IFNULL(p.altProvReporting10,""),"|"
-        ,IFNULL(p.programType,""),"|"
-        ,IFNULL(p.practiceTargetedStatus,"")
-        ,IFNULL(p.ProductID,""),"|"
-        ,IFNULL(p.ProviderType,"")
+        ,IFNULL(p.extension_isPrescribePrivilege,""),"|"
+        ,IFNULL(p.identifier_providerDEA,""),"|"
+        ,IFNULL(p.identifier_payerID,""),"|"
+        ,IFNULL(p.extension_isContracted,""),"|"
+        ,IFNULL(p.extension_providerHAI,""),"|"
+        ,IFNULL(p.identifier_hospitalID,""),"|"
+        ,IFNULL(p.extension_isExcludedFromProviderReporting,""),"|"
+        ,IFNULL(p.identifier_alternateKey1,""),"|"
+        ,IFNULL(p.identifier_alternateKey2,""),"|"
+        ,IFNULL(p.identifier_alternateKey3,""),"|"
+        ,IFNULL(p.identifier_alternateKey4,""),"|"
+        ,IFNULL(p.identifier_alternateKey5,""),"|"
+        ,IFNULL(p.identifier_alternateKey6,""),"|"
+        ,IFNULL(p.identifier_alternateKey7,""),"|"
+        ,IFNULL(p.identifier_alternateKey8,""),"|"
+        ,IFNULL(p.identifier_alternateKey9,""),"|" 
+        ,IFNULL(p.identifier_alternateKey10,""),"|"
+        ,IFNULL(p.extension_programType,""),"|"
+        ,IFNULL(p.extension_practiceTargetedStatus,"")
+        ,IFNULL(p.extension_ProductID,""),"|"
+        ,IFNULL(p.extension_ProviderType,"")
      ) AS providerKey
-    ,p.providerID
+    ,p.ESAIInternalProviderID
     ,p.effectiveStartDate
     ,p.effectiveEndDate
     ,p.isCurrent
-    ,p.npi
-    ,p.tin
-    ,p.lastName
-    ,p.firstName
-    ,p.middleName
-    ,p.phoneNumber
-    ,p.address1
-    ,p.address2
-    ,p.city
-    ,p.state
-    ,p.zipCode
+    ,p.identifier_npi
+    ,p.identifier_tin
+    ,p.name_family
+    ,p.name_given_first
+    ,p.name_given_middle
+    ,p.telecom_phone
+    ,p.address_line1
+    ,p.address_line2
+    ,p.address_city
+    ,p.address_state
+    ,p.address_postalCode
     ,p.practiceCode
     ,p.practiceName
     ,p.providerOrgCode
@@ -213,27 +213,27 @@ FinalProvider AS (
     ,p.taxonomyCode5
     ,p.hpSpecialtyCode5
     ,p.advProviderSpecialtyCode5
-    ,p.isPrescribePrivilege
-    ,p.providerDEA
-    ,p.payerID
-    ,p.isContracted
-    ,p.providerHAI
-    ,p.hospitalID
-    ,p.isExcludedFromProviderReporting
-    ,p.altProvReporting1
-    ,p.altProvReporting2
-    ,p.altProvReporting3
-    ,p.altProvReporting4
-    ,p.altProvReporting5
-    ,p.altProvReporting6
-    ,p.altProvReporting7
-    ,p.altProvReporting8
-    ,p.altProvReporting9
-    ,p.altProvReporting10
-    ,p.programType
-    ,p.practiceTargetedStatus
-    ,p.ProductID
-    ,p.ProviderType
+    ,p.extension_isPrescribePrivilege
+    ,p.identifier_providerDEA
+    ,p.identifier_payerID
+    ,p.extension_isContracted
+    ,p.extension_providerHAI
+    ,p.identifier_hospitalID
+    ,p.extension_isExcludedFromProviderReporting
+    ,p.identifier_alternateKey1
+    ,p.identifier_alternateKey2
+    ,p.identifier_alternateKey3
+    ,p.identifier_alternateKey4
+    ,p.identifier_alternateKey5
+    ,p.identifier_alternateKey6
+    ,p.identifier_alternateKey7
+    ,p.identifier_alternateKey8
+    ,p.identifier_alternateKey9
+    ,p.identifier_alternateKey10
+    ,p.extension_programType
+    ,p.extension_practiceTargetedStatus
+    ,p.extension_ProductID
+    ,p.extension_ProviderType
   FROM CombinedProvider p
 )
 SELECT * FROM FinalProvider

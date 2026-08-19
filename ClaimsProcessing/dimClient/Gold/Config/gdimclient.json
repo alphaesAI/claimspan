@@ -2,7 +2,7 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "dimClient",
-      "DestinationTable": "claimsprocessing.gold.gold_dimclient",
+      "DestinationTable": "claimspan.gold.gold_dimclient",
       "SourceTables": [
         {
           "Entity": "client_raw",
