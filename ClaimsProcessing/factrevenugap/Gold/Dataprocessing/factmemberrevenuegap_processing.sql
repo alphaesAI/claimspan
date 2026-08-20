@@ -21,7 +21,8 @@ left join dimMonth
 left join dimClient
  on upper(mrg.clientCode) = upper(dimClient.clientCode)
 left join dimMember
- on mrg.planMemberID = dimMember.planMemberID
+ -- Assuming patient/member IDs were also updated to FHIR standards
+ on mrg.identifier_memberID = dimMember.identifier_memberID 
  and CAST(dimMember.isCurrent AS INT) = 1
 left join dimMemberGroup
  on dimMember.subscriberID = dimMemberGroup.SubscriberID
@@ -31,7 +32,8 @@ left join dimHCC
  and mrg.HCCVersion = dimHCC.HCCVersion
  and upper(dimHCC.HCCType) in ('COMM', 'ESRD', 'RX')
 left join dimProvider
- on mrg.providerID = dimProvider.providerID
+ -- Updated to match your FHIR provider pipeline changes
+ on mrg.identifier_providerID = dimProvider.identifier_providerID 
  and CAST(dimProvider.isCurrent AS INT) = 1
 left join dimAlertGroup
  on mrg.alertCategory = dimAlertGroup.alertGroupCode
