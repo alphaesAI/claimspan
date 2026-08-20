@@ -10,241 +10,241 @@
       "selectColumns": [
         {
           "SourceColumn": "ProviderID",
-          "DestinationColumn": "ProviderID",
+          "DestinationColumn": "identifier_providerID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LastName",
-          "DestinationColumn": "LastName",
+          "DestinationColumn": "name_family",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FirstName",
-          "DestinationColumn": "FirstName",
+          "DestinationColumn": "name_given_first",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "MiddleInitial",
-          "DestinationColumn": "MiddleInitial",
+          "DestinationColumn": "name_given_middle_initial",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TaxonomyCode1",
-          "DestinationColumn": "TaxonomyCode1",
+          "DestinationColumn": "identifier_taxonomyCode1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HpSpecialtyCode1",
-          "DestinationColumn": "HpSpecialtyCode1",
+          "DestinationColumn": "identifier_hpSpecialtyCode1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ADVProviderSpecialtyCode1",
-          "DestinationColumn": "ADVProviderSpecialtyCode1",
+          "DestinationColumn": "identifier_advProviderSpecialtyCode1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TaxonomyCode2",
-          "DestinationColumn": "TaxonomyCode2",
+          "DestinationColumn": "identifier_taxonomyCode2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HpSpecialtyCode2",
-          "DestinationColumn": "HpSpecialtyCode2",
+          "DestinationColumn": "identifier_hpSpecialtyCode2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ADVProviderSpecialtyCode2",
-          "DestinationColumn": "ADVProviderSpecialtyCode2",
+          "DestinationColumn": "identifier_advProviderSpecialtyCode2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TaxonomyCode3",
-          "DestinationColumn": "TaxonomyCode3",
+          "DestinationColumn": "identifier_taxonomyCode3",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HpSpecialtyCode3",
-          "DestinationColumn": "HpSpecialtyCode3",
+          "DestinationColumn": "identifier_hpSpecialtyCode3",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ADVProviderSpecialtyCode3",
-          "DestinationColumn": "ADVProviderSpecialtyCode3",
+          "DestinationColumn": "identifier_advProviderSpecialtyCode3",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TaxonomyCode4",
-          "DestinationColumn": "TaxonomyCode4",
+          "DestinationColumn": "identifier_taxonomyCode4",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HpSpecialtyCode4",
-          "DestinationColumn": "HpSpecialtyCode4",
+          "DestinationColumn": "identifier_hpSpecialtyCode4",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ADVProviderSpecialtyCode4",
-          "DestinationColumn": "ADVProviderSpecialtyCode4",
+          "DestinationColumn": "identifier_advProviderSpecialtyCode4",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TaxonomyCode5",
-          "DestinationColumn": "TaxonomyCode5",
+          "DestinationColumn": "identifier_taxonomyCode5",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HpSpecialtyCode5",
-          "DestinationColumn": "HpSpecialtyCode5",
+          "DestinationColumn": "identifier_hpSpecialtyCode5",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ADVProviderSpecialtyCode5",
-          "DestinationColumn": "ADVProviderSpecialtyCode5",
+          "DestinationColumn": "identifier_advProviderSpecialtyCode5",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "PrescribePrivilege",
-          "DestinationColumn": "PrescribePrivilege",
+          "DestinationColumn": "extension_prescribePrivilege",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "PayorID",
-          "DestinationColumn": "PayorID",
+          "DestinationColumn": "identifier_payerID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "Contracted",
-          "DestinationColumn": "Contracted",
+          "DestinationColumn": "extension_contracted",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ProviderHAI",
-          "DestinationColumn": "ProviderHAI",
+          "DestinationColumn": "identifier_providerHAI",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "HospitalID",
-          "DestinationColumn": "HospitalID",
+          "DestinationColumn": "identifier_hospitalID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ExcludeFromProviderReporting",
-          "DestinationColumn": "ExcludeFromProviderReporting",
+          "DestinationColumn": "extension_excludeFromProviderReporting",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting1",
-          "DestinationColumn": "AltProvReporting1",
+          "DestinationColumn": "identifier_altProvReporting1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting2",
-          "DestinationColumn": "AltProvReporting2",
+          "DestinationColumn": "identifier_altProvReporting2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting3",
-          "DestinationColumn": "AltProvReporting3",
+          "DestinationColumn": "identifier_altProvReporting3",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting4",
-          "DestinationColumn": "AltProvReporting4",
+          "DestinationColumn": "identifier_altProvReporting4",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting5",
-          "DestinationColumn": "AltProvReporting5",
+          "DestinationColumn": "identifier_altProvReporting5",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting6",
-          "DestinationColumn": "AltProvReporting6",
+          "DestinationColumn": "identifier_altProvReporting6",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting7",
-          "DestinationColumn": "AltProvReporting7",
+          "DestinationColumn": "identifier_altProvReporting7",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting8",
-          "DestinationColumn": "AltProvReporting8",
+          "DestinationColumn": "identifier_altProvReporting8",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting9",
-          "DestinationColumn": "AltProvReporting9",
+          "DestinationColumn": "identifier_altProvReporting9",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "AltProvReporting10",
-          "DestinationColumn": "AltProvReporting10",
+          "DestinationColumn": "identifier_altProvReporting10",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_ID",
-          "DestinationColumn": "FILE_ID",
+          "DestinationColumn": "FileID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_LAYOUT_ID",
-          "DestinationColumn": "FILE_LAYOUT_ID",
+          "DestinationColumn": "FileLayoutID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_LAYOUT_DESCRIPTION",
-          "DestinationColumn": "FILE_LAYOUT_DESCRIPTION",
+          "DestinationColumn": "FileLayoutDescription",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "CLIENT_ID",
-          "DestinationColumn": "CLIENT_ID",
+          "DestinationColumn": "ClientID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOAD_DATETIME",
-          "DestinationColumn": "LOAD_DATETIME",
+          "DestinationColumn": "LoadDateTime",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         }

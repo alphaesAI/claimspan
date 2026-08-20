@@ -26,237 +26,237 @@
       "Ordinal": 5
     },
     {
-      "FieldName": "PROVIDERID",
+      "FieldName": "identifier_providerID",
       "DataType": "StringType",
       "Ordinal": 6
     },
     {
-      "FieldName": "PROVIDERLASTNAME",
+      "FieldName": "name_family",
       "DataType": "StringType",
       "Ordinal": 7
     },
     {
-      "FieldName": "PROVIDERNPI",
+      "FieldName": "identifier_npi",
       "DataType": "StringType",
       "Ordinal": 8
     },
     {
-      "FieldName": "LOCATIONGROUPID",
+      "FieldName": "identifier_locationGroupID",
       "DataType": "StringType",
       "Ordinal": 9
     },
     {
-      "FieldName": "LOCATIONRANKING",
+      "FieldName": "extension_locationRanking",
       "DataType": "StringType",
       "Ordinal": 10
     },
     {
-      "FieldName": "LOCATIONIDTYPE",
+      "FieldName": "identifier_locationIDType",
       "DataType": "StringType",
       "Ordinal": 11
     },
     {
-      "FieldName": "LOCATIONID",
+      "FieldName": "identifier_locationID",
       "DataType": "StringType",
       "Ordinal": 12
     },
     {
-      "FieldName": "LOCATIONDESC",
+      "FieldName": "extension_locationDesc",
       "DataType": "StringType",
       "Ordinal": 13
     },
     {
-      "FieldName": "LOCATIONTIN",
+      "FieldName": "identifier_locationTIN",
       "DataType": "StringType",
       "Ordinal": 14
     },
     {
-      "FieldName": "LOCATIONADDRESS1",
+      "FieldName": "address_line1",
       "DataType": "StringType",
       "Ordinal": 15
     },
     {
-      "FieldName": "LOCATIONADDRESS2",
+      "FieldName": "address_line2",
       "DataType": "StringType",
       "Ordinal": 16
     },
     {
-      "FieldName": "LOCATIONCITY",
+      "FieldName": "address_city",
       "DataType": "StringType",
       "Ordinal": 17
     },
     {
-      "FieldName": "LOCATIONSTATE",
+      "FieldName": "address_state",
       "DataType": "StringType",
       "Ordinal": 18
     },
     {
-      "FieldName": "LOCATIONZIP",
+      "FieldName": "address_postalCode",
       "DataType": "StringType",
       "Ordinal": 19
     },
     {
-      "FieldName": "COUNTYCODE",
+      "FieldName": "address_district",
       "DataType": "StringType",
       "Ordinal": 20
     },
     {
-      "FieldName": "PHONENUMBER",
+      "FieldName": "telecom_phone",
       "DataType": "StringType",
       "Ordinal": 21
     },
     {
-      "FieldName": "FAXNUMBER",
+      "FieldName": "telecom_fax",
       "DataType": "StringType",
       "Ordinal": 22
     },
     {
-      "FieldName": "CONTACTPERSON",
+      "FieldName": "contact_name",
       "DataType": "StringType",
       "Ordinal": 23
     },
     {
-      "FieldName": "DONOTCHASE",
+      "FieldName": "extension_doNotChase",
       "DataType": "StringType",
       "Ordinal": 24
     },
     {
-      "FieldName": "TIER2IDTYPE",
+      "FieldName": "identifier_tier2IDType",
       "DataType": "StringType",
       "Ordinal": 25
     },
     {
-      "FieldName": "TIER2ID",
+      "FieldName": "identifier_tier2ID",
       "DataType": "StringType",
       "Ordinal": 26
     },
     {
-      "FieldName": "TIER2DESC",
+      "FieldName": "extension_tier2Desc",
       "DataType": "StringType",
       "Ordinal": 27
     },
     {
-      "FieldName": "TIER2ADDRESS1",
+      "FieldName": "tier2_address_line1",
       "DataType": "StringType",
       "Ordinal": 28
     },
     {
-      "FieldName": "TIER2ADDRESS2",
+      "FieldName": "tier2_address_line2",
       "DataType": "StringType",
       "Ordinal": 29
     },
     {
-      "FieldName": "TIER2CITY",
+      "FieldName": "tier2_address_city",
       "DataType": "StringType",
       "Ordinal": 30
     },
     {
-      "FieldName": "TIER2STATE",
+      "FieldName": "tier2_address_state",
       "DataType": "StringType",
       "Ordinal": 31
     },
     {
-      "FieldName": "TIER2ZIP",
+      "FieldName": "tier2_address_postalCode",
       "DataType": "StringType",
       "Ordinal": 32
     },
     {
-      "FieldName": "TIER3IDTYPE",
+      "FieldName": "identifier_tier3IDType",
       "DataType": "StringType",
       "Ordinal": 33
     },
     {
-      "FieldName": "TIER3ID",
+      "FieldName": "identifier_tier3ID",
       "DataType": "StringType",
       "Ordinal": 34
     },
     {
-      "FieldName": "TIER3DESC",
+      "FieldName": "extension_tier3Desc",
       "DataType": "StringType",
       "Ordinal": 35
     },
     {
-      "FieldName": "TIER3ADDRESS1",
+      "FieldName": "tier3_address_line1",
       "DataType": "StringType",
       "Ordinal": 36
     },
     {
-      "FieldName": "TIER3ADDRESS2",
+      "FieldName": "tier3_address_line2",
       "DataType": "StringType",
       "Ordinal": 37
     },
     {
-      "FieldName": "TIER3CITY",
+      "FieldName": "tier3_address_city",
       "DataType": "StringType",
       "Ordinal": 38
     },
     {
-      "FieldName": "TIER3STATE",
+      "FieldName": "tier3_address_state",
       "DataType": "StringType",
       "Ordinal": 39
     },
     {
-      "FieldName": "TIER3ZIP",
+      "FieldName": "tier3_address_postalCode",
       "DataType": "StringType",
       "Ordinal": 40
     },
     {
-      "FieldName": "TIER4IDTYPE",
+      "FieldName": "identifier_tier4IDType",
       "DataType": "StringType",
       "Ordinal": 41
     },
     {
-      "FieldName": "TIER4ID",
+      "FieldName": "identifier_tier4ID",
       "DataType": "StringType",
       "Ordinal": 42
     },
     {
-      "FieldName": "TIER4DESC",
+      "FieldName": "extension_tier4Desc",
       "DataType": "StringType",
       "Ordinal": 43
     },
     {
-      "FieldName": "TIER4ADDRESS1",
+      "FieldName": "tier4_address_line1",
       "DataType": "StringType",
       "Ordinal": 44
     },
     {
-      "FieldName": "TIER4ADDRESS2",
+      "FieldName": "tier4_address_line2",
       "DataType": "StringType",
       "Ordinal": 45
     },
     {
-      "FieldName": "TIER4CITY",
+      "FieldName": "tier4_address_city",
       "DataType": "StringType",
       "Ordinal": 46
     },
     {
-      "FieldName": "TIER4STATE",
+      "FieldName": "tier4_address_state",
       "DataType": "StringType",
       "Ordinal": 47
     },
     {
-      "FieldName": "TIER4ZIP",
+      "FieldName": "tier4_address_postalCode",
       "DataType": "StringType",
       "Ordinal": 48
     },
     {
-      "FieldName": "STARTDATE",
+      "FieldName": "period_start",
       "DataType": "StringType",
       "Ordinal": 49
     },
     {
-      "FieldName": "ENDDATE",
+      "FieldName": "period_end",
       "DataType": "StringType",
       "Ordinal": 50
     },
     {
-      "FieldName": "NPI",
+      "FieldName": "identifier_npi",
       "DataType": "StringType",
       "Ordinal": 51
     },
     {
-      "FieldName": "DEA",
+      "FieldName": "identifier_providerDEA",
       "DataType": "StringType",
       "Ordinal": 52
     }

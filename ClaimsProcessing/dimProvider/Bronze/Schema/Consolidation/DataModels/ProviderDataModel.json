@@ -26,177 +26,177 @@
       "Ordinal": 5
     },
     {
-      "FieldName": "ProviderID",
+      "FieldName": "identifier_providerID",
       "DataType": "StringType",
       "Ordinal": 6
     },
     {
-      "FieldName": "LastName",
+      "FieldName": "name_family",
       "DataType": "StringType",
       "Ordinal": 7
     },
     {
-      "FieldName": "FirstName",
+      "FieldName": "name_given_first",
       "DataType": "StringType",
       "Ordinal": 8
     },
     {
-      "FieldName": "MiddleInitial",
+      "FieldName": "name_given_middle_initial",
       "DataType": "StringType",
       "Ordinal": 9
     },
     {
-      "FieldName": "TaxonomyCode1",
+      "FieldName": "identifier_taxonomyCode1",
       "DataType": "StringType",
       "Ordinal": 10
     },
     {
-      "FieldName": "HpSpecialtyCode1",
+      "FieldName": "identifier_hpSpecialtyCode1",
       "DataType": "StringType",
       "Ordinal": 11
     },
     {
-      "FieldName": "ADVProviderSpecialtyCode1",
+      "FieldName": "identifier_advProviderSpecialtyCode1",
       "DataType": "StringType",
       "Ordinal": 12
     },
     {
-      "FieldName": "TaxonomyCode2",
+      "FieldName": "identifier_taxonomyCode2",
       "DataType": "StringType",
       "Ordinal": 13
     },
     {
-      "FieldName": "HpSpecialtyCode2",
+      "FieldName": "identifier_hpSpecialtyCode2",
       "DataType": "StringType",
       "Ordinal": 14
     },
     {
-      "FieldName": "ADVProviderSpecialtyCode2",
+      "FieldName": "identifier_advProviderSpecialtyCode2",
       "DataType": "StringType",
       "Ordinal": 15
     },
     {
-      "FieldName": "TaxonomyCode3",
+      "FieldName": "identifier_taxonomyCode3",
       "DataType": "StringType",
       "Ordinal": 16
     },
     {
-      "FieldName": "HpSpecialtyCode3",
+      "FieldName": "identifier_hpSpecialtyCode3",
       "DataType": "StringType",
       "Ordinal": 17
     },
     {
-      "FieldName": "ADVProviderSpecialtyCode3",
+      "FieldName": "identifier_advProviderSpecialtyCode3",
       "DataType": "StringType",
       "Ordinal": 18
     },
     {
-      "FieldName": "TaxonomyCode4",
+      "FieldName": "identifier_taxonomyCode4",
       "DataType": "StringType",
       "Ordinal": 19
     },
     {
-      "FieldName": "HpSpecialtyCode4",
+      "FieldName": "identifier_hpSpecialtyCode4",
       "DataType": "StringType",
       "Ordinal": 20
     },
     {
-      "FieldName": "ADVProviderSpecialtyCode4",
+      "FieldName": "identifier_advProviderSpecialtyCode4",
       "DataType": "StringType",
       "Ordinal": 21
     },
     {
-      "FieldName": "TaxonomyCode5",
+      "FieldName": "identifier_taxonomyCode5",
       "DataType": "StringType",
       "Ordinal": 22
     },
     {
-      "FieldName": "HpSpecialtyCode5",
+      "FieldName": "identifier_hpSpecialtyCode5",
       "DataType": "StringType",
       "Ordinal": 23
     },
     {
-      "FieldName": "ADVProviderSpecialtyCode5",
+      "FieldName": "identifier_advProviderSpecialtyCode5",
       "DataType": "StringType",
       "Ordinal": 24
     },
     {
-      "FieldName": "PrescribePrivilege",
+      "FieldName": "extension_prescribePrivilege",
       "DataType": "StringType",
       "Ordinal": 25
     },
     {
-      "FieldName": "PayorID",
+      "FieldName": "identifier_payerID",
       "DataType": "StringType",
       "Ordinal": 26
     },
     {
-      "FieldName": "Contracted",
+      "FieldName": "extension_contracted",
       "DataType": "StringType",
       "Ordinal": 27
     },
     {
-      "FieldName": "ProviderHAI",
+      "FieldName": "identifier_providerHAI",
       "DataType": "StringType",
       "Ordinal": 28
     },
     {
-      "FieldName": "HospitalID",
+      "FieldName": "identifier_hospitalID",
       "DataType": "StringType",
       "Ordinal": 29
     },
     {
-      "FieldName": "ExcludeFromProviderReporting",
+      "FieldName": "extension_excludeFromProviderReporting",
       "DataType": "StringType",
       "Ordinal": 30
     },
     {
-      "FieldName": "AltProvReporting1",
+      "FieldName": "identifier_altProvReporting1",
       "DataType": "StringType",
       "Ordinal": 31
     },
     {
-      "FieldName": "AltProvReporting2",
+      "FieldName": "identifier_altProvReporting2",
       "DataType": "StringType",
       "Ordinal": 32
     },
     {
-      "FieldName": "AltProvReporting3",
+      "FieldName": "identifier_altProvReporting3",
       "DataType": "StringType",
       "Ordinal": 33
     },
     {
-      "FieldName": "AltProvReporting4",
+      "FieldName": "identifier_altProvReporting4",
       "DataType": "StringType",
       "Ordinal": 34
     },
     {
-      "FieldName": "AltProvReporting5",
+      "FieldName": "identifier_altProvReporting5",
       "DataType": "StringType",
       "Ordinal": 35
     },
     {
-      "FieldName": "AltProvReporting6",
+      "FieldName": "identifier_altProvReporting6",
       "DataType": "StringType",
       "Ordinal": 36
     },
     {
-      "FieldName": "AltProvReporting7",
+      "FieldName": "identifier_altProvReporting7",
       "DataType": "StringType",
       "Ordinal": 37
     },
     {
-      "FieldName": "AltProvReporting8",
+      "FieldName": "identifier_altProvReporting8",
       "DataType": "StringType",
       "Ordinal": 38
     },
     {
-      "FieldName": "AltProvReporting9",
+      "FieldName": "identifier_altProvReporting9",
       "DataType": "StringType",
       "Ordinal": 39
     },
     {
-      "FieldName": "AltProvReporting10",
+      "FieldName": "identifier_altProvReporting10",
       "DataType": "StringType",
       "Ordinal": 40
     }

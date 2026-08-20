@@ -25,11 +25,6 @@
           "SourceFormat": "delta"
         },
         {
-          "Entity": "dimMemberGroup",
-          "SourceTable": "claimspan.gold.gold_ma_membergroup",
-          "SourceFormat": "delta"
-        },
-        {
           "Entity": "dimHCC",
           "SourceTable": "claimspan.gold.gold_dimhcc",
           "SourceFormat": "delta"
@@ -50,8 +45,8 @@
           "SourceFormat": "delta"
         }
       ],
-      "SQLScriptPath": "../Dataprocessing/factmemberrevenuegap_processing.sql",
-      "MergeScriptPath": "../DataUpdate/factmemberrevenuegap_update.sql"
+      "SQLScriptPath": "Dataprocessing/factmemberrevenuegap_processing.sql",
+      "MergeScriptPath": "DataUpdate/factmemberrevenuegap_update.sql"
     }
   ]
 }

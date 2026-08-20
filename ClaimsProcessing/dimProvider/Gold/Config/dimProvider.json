@@ -2,11 +2,11 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "dimprovider",
-      "DestinationTable": "claimsprocessing.gold.gold_dimprovider",
+      "DestinationTable": "claimspan.gold.gold_dimprovider",
       "SourceTables": [
         {
           "Entity": "provider_hierarchy",
-          "SourceTable": "claimsprocessing.silver.silver_provider_hierarchy",
+          "SourceTable": "claimspan.silver.silver_provider_hierarchy",
           "SourceFormat": "delta"
         }
       ],

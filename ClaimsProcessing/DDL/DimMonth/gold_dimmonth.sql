@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS claimsprocessing.gold.gold_dimmonth (
+CREATE TABLE IF NOT EXISTS claimspan.gold.gold_dimmonth (
  monthKey  int
 ,monthNumber  int
 ,monthName  string

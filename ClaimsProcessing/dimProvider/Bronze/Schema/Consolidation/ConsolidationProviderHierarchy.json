@@ -10,313 +10,313 @@
       "selectColumns": [
         {
           "SourceColumn": "PROVIDERID",
-          "DestinationColumn": "PROVIDERID",
+          "DestinationColumn": "identifier_providerID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "PROVIDERLASTNAME",
-          "DestinationColumn": "PROVIDERLASTNAME",
+          "DestinationColumn": "name_family",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "PROVIDERNPI",
-          "DestinationColumn": "PROVIDERNPI",
+          "DestinationColumn": "identifier_npi",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONGROUPID",
-          "DestinationColumn": "LOCATIONGROUPID",
+          "DestinationColumn": "identifier_locationGroupID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONRANKING",
-          "DestinationColumn": "LOCATIONRANKING",
+          "DestinationColumn": "extension_locationRanking",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONIDTYPE",
-          "DestinationColumn": "LOCATIONIDTYPE",
+          "DestinationColumn": "identifier_locationIDType",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONID",
-          "DestinationColumn": "LOCATIONID",
+          "DestinationColumn": "identifier_locationID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONDESC",
-          "DestinationColumn": "LOCATIONDESC",
+          "DestinationColumn": "extension_locationDesc",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONTIN",
-          "DestinationColumn": "LOCATIONTIN",
+          "DestinationColumn": "identifier_locationTIN",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONADDRESS1",
-          "DestinationColumn": "LOCATIONADDRESS1",
+          "DestinationColumn": "address_line1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONADDRESS2",
-          "DestinationColumn": "LOCATIONADDRESS2",
+          "DestinationColumn": "address_line2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONCITY",
-          "DestinationColumn": "LOCATIONCITY",
+          "DestinationColumn": "address_city",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONSTATE",
-          "DestinationColumn": "LOCATIONSTATE",
+          "DestinationColumn": "address_state",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOCATIONZIP",
-          "DestinationColumn": "LOCATIONZIP",
+          "DestinationColumn": "address_postalCode",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "COUNTYCODE",
-          "DestinationColumn": "COUNTYCODE",
+          "DestinationColumn": "address_district",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "PHONENUMBER",
-          "DestinationColumn": "PHONENUMBER",
+          "DestinationColumn": "telecom_phone",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FAXNUMBER",
-          "DestinationColumn": "FAXNUMBER",
+          "DestinationColumn": "telecom_fax",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "CONTACTPERSON",
-          "DestinationColumn": "CONTACTPERSON",
+          "DestinationColumn": "contact_name",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "DONOTCHASE",
-          "DestinationColumn": "DONOTCHASE",
+          "DestinationColumn": "extension_doNotChase",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2IDTYPE",
-          "DestinationColumn": "TIER2IDTYPE",
+          "DestinationColumn": "identifier_tier2IDType",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2ID",
-          "DestinationColumn": "TIER2ID",
+          "DestinationColumn": "identifier_tier2ID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2DESC",
-          "DestinationColumn": "TIER2DESC",
+          "DestinationColumn": "extension_tier2Desc",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2ADDRESS1",
-          "DestinationColumn": "TIER2ADDRESS1",
+          "DestinationColumn": "tier2_address_line1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2ADDRESS2",
-          "DestinationColumn": "TIER2ADDRESS2",
+          "DestinationColumn": "tier2_address_line2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2CITY",
-          "DestinationColumn": "TIER2CITY",
+          "DestinationColumn": "tier2_address_city",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2STATE",
-          "DestinationColumn": "TIER2STATE",
+          "DestinationColumn": "tier2_address_state",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER2ZIP",
-          "DestinationColumn": "TIER2ZIP",
+          "DestinationColumn": "tier2_address_postalCode",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3IDTYPE",
-          "DestinationColumn": "TIER3IDTYPE",
+          "DestinationColumn": "identifier_tier3IDType",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3ID",
-          "DestinationColumn": "TIER3ID",
+          "DestinationColumn": "identifier_tier3ID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3DESC",
-          "DestinationColumn": "TIER3DESC",
+          "DestinationColumn": "extension_tier3Desc",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3ADDRESS1",
-          "DestinationColumn": "TIER3ADDRESS1",
+          "DestinationColumn": "tier3_address_line1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3ADDRESS2",
-          "DestinationColumn": "TIER3ADDRESS2",
+          "DestinationColumn": "tier3_address_line2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3CITY",
-          "DestinationColumn": "TIER3CITY",
+          "DestinationColumn": "tier3_address_city",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3STATE",
-          "DestinationColumn": "TIER3STATE",
+          "DestinationColumn": "tier3_address_state",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER3ZIP",
-          "DestinationColumn": "TIER3ZIP",
+          "DestinationColumn": "tier3_address_postalCode",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4IDTYPE",
-          "DestinationColumn": "TIER4IDTYPE",
+          "DestinationColumn": "identifier_tier4IDType",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4ID",
-          "DestinationColumn": "TIER4ID",
+          "DestinationColumn": "identifier_tier4ID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4DESC",
-          "DestinationColumn": "TIER4DESC",
+          "DestinationColumn": "extension_tier4Desc",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4ADDRESS1",
-          "DestinationColumn": "TIER4ADDRESS1",
+          "DestinationColumn": "tier4_address_line1",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4ADDRESS2",
-          "DestinationColumn": "TIER4ADDRESS2",
+          "DestinationColumn": "tier4_address_line2",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4CITY",
-          "DestinationColumn": "TIER4CITY",
+          "DestinationColumn": "tier4_address_city",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4STATE",
-          "DestinationColumn": "TIER4STATE",
+          "DestinationColumn": "tier4_address_state",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "TIER4ZIP",
-          "DestinationColumn": "TIER4ZIP",
+          "DestinationColumn": "tier4_address_postalCode",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "STARTDATE",
-          "DestinationColumn": "STARTDATE",
+          "DestinationColumn": "period_start",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "ENDDATE",
-          "DestinationColumn": "ENDDATE",
+          "DestinationColumn": "period_end",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "NPI",
-          "DestinationColumn": "NPI",
+          "DestinationColumn": "identifier_npi",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "DEA",
-          "DestinationColumn": "DEA",
+          "DestinationColumn": "identifier_providerDEA",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_ID",
-          "DestinationColumn": "FILE_ID",
+          "DestinationColumn": "FileID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_LAYOUT_ID",
-          "DestinationColumn": "FILE_LAYOUT_ID",
+          "DestinationColumn": "FileLayoutID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "FILE_LAYOUT_DESCRIPTION",
-          "DestinationColumn": "FILE_LAYOUT_DESCRIPTION",
+          "DestinationColumn": "FileLayoutDescription",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "CLIENT_ID",
-          "DestinationColumn": "CLIENT_ID",
+          "DestinationColumn": "ClientID",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         },
         {
           "SourceColumn": "LOAD_DATETIME",
-          "DestinationColumn": "LOAD_DATETIME",
+          "DestinationColumn": "LoadDateTime",
           "SourceColumnFormat": "",
           "ColumnQuery": ""
         }
