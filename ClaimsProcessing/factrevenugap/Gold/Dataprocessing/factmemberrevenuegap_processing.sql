@@ -3,7 +3,7 @@ WITH sourceTbl AS (
     IFNULL(dimMonth.monthKey, -99)                                  AS pecYearMonthKey,
     IFNULL(dimClient.clientKey, -99)                                AS clientKey,
     IFNULL(dimMember.memberKey, -99)                                AS memberKey,
-    CAST('-99' AS STRING)                                           AS memberGroupKey,
+    IFNULL(dimMemberGroup.memberGroupKey, '-99')                    AS memberGroupKey,
     IFNULL(mrg.planID, '')                                          AS planID,
     IFNULL(dimProvider.payerIdentifier, '')                         AS payerIdentifier,
     IFNULL(dimHCC.hccKey, -99)                                      AS hccKey,
@@ -23,6 +23,9 @@ WITH sourceTbl AS (
   LEFT JOIN dimMember dimMember
     ON TRIM(mrg.planMemberID) = TRIM(dimMember.identifier_planMemberID)
    AND CAST(dimMember.isCurrent AS INT) = 1
+  LEFT JOIN dimMemberGroup dimMemberGroup
+    ON TRIM(mrg.subscriberID) = TRIM(dimMemberGroup.SubscriberID)
+   AND (TRIM(mrg.planID) = TRIM(dimMemberGroup.GroupNumber) OR TRIM(mrg.planMemberID) = TRIM(dimMemberGroup.BeneficiaryID))
   LEFT JOIN dimHCC dimHCC
     ON TRIM(mrg.hccNumber) = TRIM(dimHCC.HCCNumber)
    AND SUBSTRING(REPLACE(CAST(mrg.reportMonth AS STRING), '-', ''), 1, 4) = CAST(dimHCC.EffectiveYear AS STRING)
