@@ -1,0 +1,68 @@
+2026-08-16 07:18:50,185 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:18:50,186 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_071850.log
+2026-08-16 07:18:50,187 - INFO - Configuration loaded:
+2026-08-16 07:18:50,189 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:18:50,190 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:18:51,084 - INFO - ============================================================
+2026-08-16 07:18:51,086 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 07:18:51,087 - INFO - ============================================================
+2026-08-16 07:18:51,089 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:19:07,586 - INFO - Raw FHIR records loaded: 2
+2026-08-16 07:21:45,568 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:21:45,569 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_072145.log
+2026-08-16 07:21:45,570 - INFO - Configuration loaded:
+2026-08-16 07:21:45,570 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:21:45,572 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:21:45,575 - INFO - ============================================================
+2026-08-16 07:21:45,576 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 07:21:45,577 - INFO - ============================================================
+2026-08-16 07:21:45,578 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:22:00,979 - INFO - Raw FHIR records loaded: 2
+2026-08-16 07:22:01,707 - INFO - Processed FHIR records after transformations: 1
+2026-08-16 07:22:01,708 - INFO - LoadSource completed successfully
+2026-08-16 07:22:02,471 - INFO - Total FHIR records to process: 1
+2026-08-16 07:22:02,473 - INFO - Single record detected - skipping linkage
+2026-08-16 07:24:16,906 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:24:16,908 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_072416.log
+2026-08-16 07:24:16,909 - INFO - Configuration loaded:
+2026-08-16 07:24:16,909 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:24:16,910 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:24:16,913 - INFO - ============================================================
+2026-08-16 07:24:16,914 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 07:24:16,915 - INFO - ============================================================
+2026-08-16 07:24:16,916 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:24:33,621 - INFO - Raw FHIR records loaded: 2
+2026-08-16 07:25:19,050 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:25:19,052 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_072519.log
+2026-08-16 07:25:19,052 - INFO - Configuration loaded:
+2026-08-16 07:25:19,053 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:25:19,054 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:25:34,031 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:25:34,032 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_072534.log
+2026-08-16 07:25:34,033 - INFO - Configuration loaded:
+2026-08-16 07:25:34,033 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:25:34,034 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:25:34,037 - INFO - ============================================================
+2026-08-16 07:25:34,038 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 07:25:34,039 - INFO - ============================================================
+2026-08-16 07:25:34,040 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:25:46,997 - INFO - Raw FHIR records loaded: 2
+2026-08-16 07:25:47,734 - INFO - Processed FHIR records after transformations: 1
+2026-08-16 07:25:47,735 - INFO - LoadSource completed successfully
+2026-08-16 07:25:48,420 - INFO - Total FHIR records to process: 1
+2026-08-16 07:25:48,422 - INFO - Single record detected - skipping linkage
+2026-08-16 07:27:54,731 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 07:27:54,733 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_072754.log
+2026-08-16 07:27:54,735 - INFO - Configuration loaded:
+2026-08-16 07:27:54,736 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:27:54,737 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:27:54,740 - INFO - ============================================================
+2026-08-16 07:27:54,741 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 07:27:54,742 - INFO - ============================================================
+2026-08-16 07:27:54,744 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:28:07,380 - INFO - Raw FHIR records loaded: 2
+2026-08-16 07:28:08,111 - INFO - Processed FHIR records after transformations: 1
+2026-08-16 07:28:08,114 - INFO - LoadSource completed successfully
+2026-08-16 07:28:08,842 - INFO - Total FHIR records to process: 1
+2026-08-16 07:28:08,844 - INFO - Single record detected - skipping linkage
+2026-08-16 07:28:15,716 - INFO - Silver FHIR layer processing completed successfully (single record path)

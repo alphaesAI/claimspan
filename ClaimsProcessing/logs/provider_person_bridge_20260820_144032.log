@@ -1,0 +1,23 @@
+2026-08-20 14:40:32,861 - INFO - ============================================================
+2026-08-20 14:40:32,864 - INFO - Provider Person Bridge Processing Started
+2026-08-20 14:40:32,867 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_person_bridge_20260820_144032.log
+2026-08-20 14:40:32,868 - INFO - ============================================================
+2026-08-20 14:40:33,025 - INFO - Configuration loaded:
+2026-08-20 14:40:33,027 - INFO -   Source Path: /Volumes/claimspan/bronze/provider_consolidated
+2026-08-20 14:40:33,033 - INFO -   Silver Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 14:40:36,524 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:40:36,527 - INFO - Data check: /Volumes/claimspan/bronze/provider_consolidated - Data exists
+2026-08-20 14:40:36,528 - INFO - Starting LoadSource from FHIR parquet source: /Volumes/claimspan/bronze/provider_consolidated
+2026-08-20 14:40:50,727 - INFO - Raw records loaded: 5
+2026-08-20 14:40:51,300 - INFO - Processed records after FHIR transformations: 5
+2026-08-20 14:40:51,301 - INFO - LoadSource completed successfully
+2026-08-20 14:40:51,798 - INFO - Entering RunLinking function
+2026-08-20 14:40:52,319 - INFO - Starting RulesToCompare function
+2026-08-20 14:40:52,355 - INFO - Rule_NPI (identifier_npi_formatted): Found 6 candidate pairs
+2026-08-20 14:40:52,424 - INFO - Rule_NPI: 6 matches found (threshold: 3)
+2026-08-20 14:40:52,445 - INFO - Rule_DEA (identifier_dea_formatted): Skipping because matching column is empty
+2026-08-20 14:40:52,474 - INFO - Rule_ProvID (identifier_providerID): Found 6 candidate pairs
+2026-08-20 14:40:52,540 - INFO - Rule_ProvID: 6 matches found (threshold: 3)
+2026-08-20 14:40:52,567 - INFO - Rule_Demographics (name_family): Found 6 candidate pairs
+2026-08-20 14:40:52,616 - INFO - Rule_Demographics: 6 matches found (threshold: 2)
+2026-08-20 14:40:52,617 - INFO - RulesToCompare completed. Total matches across all rules: 18

@@ -1,0 +1,10 @@
+2026-08-19 12:53:03,487 - INFO - ============================================================
+2026-08-19 12:53:03,491 - INFO - Provider Person Bridge Processing Started
+2026-08-19 12:53:03,495 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_person_bridge_20260819_125303.log
+2026-08-19 12:53:03,501 - INFO - ============================================================
+2026-08-19 12:53:09,420 - INFO - Configuration loaded:
+2026-08-19 12:53:09,426 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/processed_parquet/provider
+2026-08-19 12:53:09,429 - INFO -   Silver Table: `claimsprocessing`.silver.provider_person_bridge
+2026-08-19 12:54:02,216 - INFO - MAIN EXECUTION STARTED
+2026-08-19 12:54:02,217 - INFO - Data check: /Volumes/claimsprocessing/bronze/processed_parquet/provider - Data exists
+2026-08-19 12:54:02,218 - INFO - Starting LoadSource from FHIR parquet source: /Volumes/claimsprocessing/bronze/processed_parquet/provider

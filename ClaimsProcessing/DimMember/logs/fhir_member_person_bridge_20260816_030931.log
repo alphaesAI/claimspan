@@ -1,0 +1,5 @@
+2026-08-16 03:09:31,573 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 03:09:31,575 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/fhir_member_person_bridge_20260816_030931.log
+2026-08-16 03:09:31,763 - INFO - Configuration loaded:
+2026-08-16 03:09:31,766 - INFO -   Source Volume Path: /Volumes/claimsprocessing/bronze/fhirmember_consolidated
+2026-08-16 03:09:31,768 - INFO -   Target Silver Table: claimsprocessing.silver.fhirpersongrouping

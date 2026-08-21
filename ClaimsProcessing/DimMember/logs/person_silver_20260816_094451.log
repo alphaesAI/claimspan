@@ -1,0 +1,35 @@
+2026-08-16 09:44:51,998 - INFO - ============================================================
+2026-08-16 09:44:52,000 - INFO - Silver Person Processing Started
+2026-08-16 09:44:52,001 - INFO - ============================================================
+2026-08-16 09:44:52,469 - INFO - Configuration loaded:
+2026-08-16 09:44:52,471 - INFO -   Source Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 09:44:52,472 - INFO -   Silver Person Bridge Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 09:44:52,474 - INFO -   Silver Person Table: claimspan.silver.silver_member
+2026-08-16 09:44:53,179 - INFO - ============================================================
+2026-08-16 09:44:53,182 - INFO - MAIN EXECUTION STARTED
+2026-08-16 09:44:53,184 - INFO - ============================================================
+2026-08-16 09:44:53,186 - INFO - Processing Silver Person data...
+2026-08-16 09:44:53,189 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 09:44:53,190 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 09:44:53,192 - INFO - Checking if source path exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 09:44:53,194 - INFO - Table/Path check: /Volumes/claimspan/bronze/member_consolidated - Exists
+2026-08-16 09:44:53,195 - INFO - Source table exists - proceeding with processing
+2026-08-16 09:44:53,196 - INFO - Loading consolidated member data from source path...
+2026-08-16 09:44:53,983 - INFO - Consolidated member data loaded: 2 records
+2026-08-16 09:44:53,988 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 09:44:54,620 - INFO - Person bridge data loaded: 1 records
+2026-08-16 09:44:54,621 - INFO - Starting data transformations...
+2026-08-16 09:44:54,660 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 09:44:56,018 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 09:44:56,023 - INFO - Creating temporary views for SQL processing
+2026-08-16 09:44:56,254 - INFO - Created temp view: consolidateMem
+2026-08-16 09:44:56,520 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 09:44:56,522 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 09:44:56,741 - INFO - SQL join completed
+2026-08-16 09:44:57,976 - INFO - Join result: 1 records to process
+2026-08-16 09:44:57,977 - INFO - Processing 1 records for Silver Person table: claimspan.silver.silver_member
+2026-08-16 09:44:58,321 - INFO - Target table does not exist - creating initial table via append mode
+2026-08-16 09:45:09,516 - INFO - Silver Person table updated successfully
+2026-08-16 09:45:09,518 - INFO - ============================================================
+2026-08-16 09:45:09,519 - INFO - PROCESSING COMPLETED SUCCESSFULLY
+2026-08-16 09:45:09,521 - INFO - ============================================================

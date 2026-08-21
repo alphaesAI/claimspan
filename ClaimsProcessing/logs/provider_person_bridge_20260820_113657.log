@@ -1,0 +1,7 @@
+2026-08-20 11:36:57,585 - INFO - ============================================================
+2026-08-20 11:36:57,591 - INFO - Provider Person Bridge Processing Started
+2026-08-20 11:36:57,593 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_person_bridge_20260820_113657.log
+2026-08-20 11:36:57,595 - INFO - ============================================================
+2026-08-20 11:36:58,094 - INFO - Configuration loaded:
+2026-08-20 11:36:58,114 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 11:36:58,147 - INFO -   Silver Table: `claimspan`.silver.provider_person_bridge

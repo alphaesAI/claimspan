@@ -1,0 +1,369 @@
+2026-08-16 06:27:23,186 - INFO - ============================================================
+2026-08-16 06:27:23,188 - INFO - Silver Person Processing Started
+2026-08-16 06:27:23,190 - INFO - ============================================================
+2026-08-16 06:27:23,191 - INFO - Configuration loaded:
+2026-08-16 06:27:23,192 - INFO -   Source Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:27:23,193 - INFO -   Silver Person Bridge Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:27:23,195 - INFO -   Silver Person Table: claimspan.silver.silver_member
+2026-08-16 06:27:27,055 - INFO - ============================================================
+2026-08-16 06:27:27,057 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:27:27,058 - INFO - ============================================================
+2026-08-16 06:27:27,061 - INFO - Processing Silver Person data...
+2026-08-16 06:27:27,065 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:27:27,067 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:27:27,069 - INFO - Checking if source table exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:27:27,071 - INFO - Table check: claimspan.silver.silver_memberpersonbridge - Table exists
+2026-08-16 06:27:27,073 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:27:27,075 - INFO - Loading consolidated member data from source table...
+2026-08-16 06:27:43,397 - INFO - Consolidated member data loaded: 1 records
+2026-08-16 06:27:43,398 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:27:45,206 - INFO - Person bridge data loaded: 1 records
+2026-08-16 06:27:45,207 - INFO - Starting data transformations...
+2026-08-16 06:27:45,255 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:27:51,655 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 06:27:51,659 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:27:52,256 - INFO - Created temp view: consolidateMem
+2026-08-16 06:27:52,859 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:27:52,860 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 06:27:53,246 - INFO - SQL join completed
+2026-08-16 06:27:54,853 - INFO - Join result: 0 records to process
+2026-08-16 06:27:54,854 - WARNING - No records to process - join returned 0 records
+2026-08-16 06:27:54,856 - WARNING - Check if person bridge table has data with IsCurrentPMUP = 1
+2026-08-16 06:27:54,857 - INFO - ============================================================
+2026-08-16 06:27:54,859 - INFO - PROCESSING COMPLETED - NO RECORDS
+2026-08-16 06:27:54,860 - INFO - ============================================================
+2026-08-16 06:33:19,876 - INFO - ============================================================
+2026-08-16 06:33:19,877 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:33:19,878 - INFO - ============================================================
+2026-08-16 06:33:19,879 - INFO - Processing Silver Person data...
+2026-08-16 06:33:19,880 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:33:19,881 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:33:19,882 - INFO - Checking if source table exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:33:19,883 - INFO - Table check: claimspan.silver.silver_memberpersonbridge - Table exists
+2026-08-16 06:33:19,884 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:33:19,885 - INFO - Loading consolidated member data from source table...
+2026-08-16 06:33:20,543 - INFO - Consolidated member data loaded: 1 records
+2026-08-16 06:33:20,545 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:33:20,934 - INFO - Person bridge data loaded: 1 records
+2026-08-16 06:33:20,935 - INFO - Starting data transformations...
+2026-08-16 06:33:20,936 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:33:21,558 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 06:33:21,559 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:33:21,780 - INFO - Created temp view: consolidateMem
+2026-08-16 06:33:22,070 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:33:22,072 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 06:33:22,254 - INFO - SQL join completed
+2026-08-16 06:33:23,117 - INFO - Join result: 1 records to process
+2026-08-16 06:33:23,118 - INFO - Writing 1 records to Silver Person table: claimspan.silver.silver_member
+2026-08-16 06:33:31,679 - INFO - Silver Person table created successfully
+2026-08-16 06:33:31,680 - INFO - ============================================================
+2026-08-16 06:33:31,682 - INFO - PROCESSING COMPLETED SUCCESSFULLY
+2026-08-16 06:33:31,682 - INFO - ============================================================
+2026-08-16 06:34:54,225 - INFO - ============================================================
+2026-08-16 06:34:54,226 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:34:54,228 - INFO - ============================================================
+2026-08-16 06:34:54,231 - INFO - Processing Silver Person data...
+2026-08-16 06:34:54,233 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:34:54,234 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:34:54,234 - INFO - Checking if source table exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:34:54,236 - INFO - Table check: claimspan.silver.silver_memberpersonbridge - Table exists
+2026-08-16 06:34:54,237 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:34:54,237 - INFO - Loading consolidated member data from source table...
+2026-08-16 06:34:54,867 - INFO - Consolidated member data loaded: 1 records
+2026-08-16 06:34:54,868 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:34:55,344 - INFO - Person bridge data loaded: 1 records
+2026-08-16 06:34:55,346 - INFO - Starting data transformations...
+2026-08-16 06:34:55,347 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:34:55,930 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 06:34:55,932 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:34:56,133 - INFO - Created temp view: consolidateMem
+2026-08-16 06:34:56,774 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:34:56,775 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 06:34:56,932 - INFO - SQL join completed
+2026-08-16 06:34:57,797 - INFO - Join result: 1 records to process
+2026-08-16 06:34:57,798 - INFO - Writing 1 records to Silver Person table: claimspan.silver.silver_member
+2026-08-16 06:35:01,017 - INFO - Silver Person table created successfully
+2026-08-16 06:35:01,018 - INFO - ============================================================
+2026-08-16 06:35:01,019 - INFO - PROCESSING COMPLETED SUCCESSFULLY
+2026-08-16 06:35:01,020 - INFO - ============================================================
+2026-08-16 06:35:30,394 - INFO - ============================================================
+2026-08-16 06:35:30,395 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:35:30,396 - INFO - ============================================================
+2026-08-16 06:35:30,397 - INFO - Processing Silver Person data...
+2026-08-16 06:35:30,398 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:35:30,399 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:35:30,400 - INFO - Checking if source table exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:35:30,402 - INFO - Table check: claimspan.silver.silver_memberpersonbridge - Table exists
+2026-08-16 06:35:30,403 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:35:30,404 - INFO - Loading consolidated member data from source table...
+2026-08-16 06:35:30,982 - INFO - Consolidated member data loaded: 1 records
+2026-08-16 06:35:30,983 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:35:31,456 - INFO - Person bridge data loaded: 1 records
+2026-08-16 06:35:31,457 - INFO - Starting data transformations...
+2026-08-16 06:35:31,459 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:35:32,040 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 06:35:32,043 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:35:32,247 - INFO - Created temp view: consolidateMem
+2026-08-16 06:35:32,505 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:35:32,507 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 06:35:32,655 - INFO - SQL join completed
+2026-08-16 06:35:33,506 - INFO - Join result: 1 records to process
+2026-08-16 06:35:33,518 - INFO - Writing 1 records to Silver Person table: claimspan.silver.silver_member
+2026-08-16 06:35:36,391 - INFO - Silver Person table created successfully
+2026-08-16 06:35:36,392 - INFO - ============================================================
+2026-08-16 06:35:36,393 - INFO - PROCESSING COMPLETED SUCCESSFULLY
+2026-08-16 06:35:36,394 - INFO - ============================================================
+2026-08-16 06:47:54,658 - INFO - ============================================================
+2026-08-16 06:47:54,660 - INFO - Silver Person Processing Started
+2026-08-16 06:47:54,661 - INFO - ============================================================
+2026-08-16 06:48:57,814 - INFO - ============================================================
+2026-08-16 06:48:57,817 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:48:57,818 - INFO - ============================================================
+2026-08-16 06:48:57,820 - INFO - Processing Silver Person data...
+2026-08-16 06:48:57,821 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:48:57,822 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:48:57,823 - INFO - Checking if source path exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 06:48:57,825 - INFO - Table/Path check: /Volumes/claimspan/bronze/member_consolidated - Exists
+2026-08-16 06:48:57,826 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:48:57,827 - INFO - Loading consolidated member data from source path...
+2026-08-16 06:48:58,551 - INFO - Consolidated member data loaded: 1 records
+2026-08-16 06:48:58,552 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 06:48:58,950 - INFO - Person bridge data loaded: 1 records
+2026-08-16 06:48:58,951 - INFO - Starting data transformations...
+2026-08-16 06:48:58,952 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:48:59,534 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 06:48:59,535 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:48:59,725 - INFO - Created temp view: consolidateMem
+2026-08-16 06:48:59,995 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:48:59,996 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 06:49:00,138 - INFO - SQL join completed
+2026-08-16 06:49:00,856 - INFO - Join result: 0 records to process
+2026-08-16 06:49:00,858 - WARNING - No records to process - join returned 0 records
+2026-08-16 06:49:00,859 - WARNING - Check if person bridge table has data with IsCurrentPMUP = 1
+2026-08-16 06:49:00,859 - INFO - ============================================================
+2026-08-16 06:49:00,860 - INFO - PROCESSING COMPLETED - NO RECORDS
+2026-08-16 06:49:00,861 - INFO - ============================================================
+2026-08-16 06:52:03,570 - INFO - Configuration loaded:
+2026-08-16 06:52:03,571 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 06:52:03,572 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 06:52:03,573 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 06:52:10,352 - INFO - Configuration loaded:
+2026-08-16 06:52:10,353 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 06:52:10,354 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 06:52:10,354 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 06:52:20,425 - INFO - ============================================================
+2026-08-16 06:52:20,426 - INFO - MAIN EXECUTION STARTED
+2026-08-16 06:52:20,428 - INFO - ============================================================
+2026-08-16 06:52:20,429 - INFO - Processing Silver Person data...
+2026-08-16 06:52:20,430 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 06:52:20,431 - INFO - Person Bridge: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 06:52:20,432 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 06:52:20,434 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 06:52:20,435 - INFO - Source table exists - proceeding with processing
+2026-08-16 06:52:20,436 - INFO - Loading consolidated member data from source path...
+2026-08-16 06:52:21,795 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 06:52:21,796 - INFO - Loading person bridge table: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 06:52:22,996 - INFO - Person bridge data loaded: 4 records
+2026-08-16 06:52:22,997 - INFO - Starting data transformations...
+2026-08-16 06:52:22,998 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 06:52:23,741 - INFO - Transformations completed: 4 records after distinct
+2026-08-16 06:52:23,742 - INFO - Creating temporary views for SQL processing
+2026-08-16 06:52:23,936 - INFO - Created temp view: consolidateMem
+2026-08-16 06:52:24,205 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 06:52:24,206 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:32:11,719 - INFO - ============================================================
+2026-08-16 07:32:11,720 - INFO - Silver Person Processing Started
+2026-08-16 07:32:11,722 - INFO - ============================================================
+2026-08-16 07:32:12,039 - INFO - Configuration loaded:
+2026-08-16 07:32:12,040 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:12,041 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 07:32:12,042 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 07:32:12,605 - INFO - ============================================================
+2026-08-16 07:32:12,606 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:32:12,608 - INFO - ============================================================
+2026-08-16 07:32:12,609 - INFO - Processing Silver Person data...
+2026-08-16 07:32:12,610 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:12,611 - INFO - Person Bridge: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 07:32:12,611 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:12,613 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 07:32:12,614 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:32:12,615 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:32:13,365 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 07:32:13,366 - INFO - Loading person bridge table: claimsprocessing.silver.silver_member_person_bridge
+2026-08-16 07:32:13,797 - INFO - Person bridge data loaded: 4 records
+2026-08-16 07:32:13,823 - INFO - Starting data transformations...
+2026-08-16 07:32:13,824 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:32:14,430 - INFO - Transformations completed: 4 records after distinct
+2026-08-16 07:32:14,431 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:32:14,599 - INFO - Created temp view: consolidateMem
+2026-08-16 07:32:14,847 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:32:14,849 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:32:42,028 - INFO - Configuration loaded:
+2026-08-16 07:32:42,029 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:42,030 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:32:42,031 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 07:32:49,531 - INFO - ============================================================
+2026-08-16 07:32:49,532 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:32:49,533 - INFO - ============================================================
+2026-08-16 07:32:49,534 - INFO - Processing Silver Person data...
+2026-08-16 07:32:49,535 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:49,537 - INFO - Person Bridge: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:32:49,538 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:32:49,539 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 07:32:49,540 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:32:49,541 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:32:50,089 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 07:32:50,090 - INFO - Loading person bridge table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:32:50,767 - INFO - Person bridge data loaded: 0 records
+2026-08-16 07:32:50,768 - INFO - Starting data transformations...
+2026-08-16 07:32:50,769 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:32:51,351 - INFO - Transformations completed: 4 records after distinct
+2026-08-16 07:32:51,353 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:32:51,542 - INFO - Created temp view: consolidateMem
+2026-08-16 07:32:52,011 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:32:52,012 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:35:38,198 - INFO - ============================================================
+2026-08-16 07:35:38,199 - INFO - Silver Person Processing Started
+2026-08-16 07:35:38,200 - INFO - ============================================================
+2026-08-16 07:35:38,571 - INFO - Configuration loaded:
+2026-08-16 07:35:38,572 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:35:38,573 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:35:38,574 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 07:35:39,171 - INFO - ============================================================
+2026-08-16 07:35:39,173 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:35:39,174 - INFO - ============================================================
+2026-08-16 07:35:39,174 - INFO - Processing Silver Person data...
+2026-08-16 07:35:39,175 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:35:39,176 - INFO - Person Bridge: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:35:39,177 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:35:39,179 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 07:35:39,180 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:35:39,180 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:35:39,769 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 07:35:39,771 - INFO - Loading person bridge table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:35:40,133 - INFO - Person bridge data loaded: 0 records
+2026-08-16 07:35:40,133 - INFO - Starting data transformations...
+2026-08-16 07:35:40,135 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:35:40,682 - INFO - Transformations completed: 4 records after distinct
+2026-08-16 07:35:40,683 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:35:40,853 - INFO - Created temp view: consolidateMem
+2026-08-16 07:35:41,371 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:35:41,372 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:44:44,076 - INFO - ============================================================
+2026-08-16 07:44:44,077 - INFO - Silver Person Processing Started
+2026-08-16 07:44:44,078 - INFO - ============================================================
+2026-08-16 07:44:44,448 - INFO - Configuration loaded:
+2026-08-16 07:44:44,449 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:44:44,450 - INFO -   Silver Person Bridge Table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:44:44,451 - INFO -   Silver Person Table: claimsprocessing.silver.silver_member
+2026-08-16 07:44:45,127 - INFO - ============================================================
+2026-08-16 07:44:45,129 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:44:45,137 - INFO - ============================================================
+2026-08-16 07:44:45,142 - INFO - Processing Silver Person data...
+2026-08-16 07:44:45,143 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:44:45,144 - INFO - Person Bridge: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:44:45,145 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:44:45,148 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 07:44:45,149 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:44:45,150 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:44:45,834 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 07:44:45,836 - INFO - Loading person bridge table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:44:46,209 - INFO - Person bridge data loaded: 0 records
+2026-08-16 07:44:46,211 - INFO - Starting data transformations...
+2026-08-16 07:44:46,212 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:44:46,751 - INFO - Transformations completed: 4 records after distinct
+2026-08-16 07:44:46,752 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:44:46,928 - INFO - Created temp view: consolidateMem
+2026-08-16 07:44:47,147 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:44:47,149 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:47:45,076 - INFO - ============================================================
+2026-08-16 07:47:45,077 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:47:45,078 - INFO - ============================================================
+2026-08-16 07:47:45,079 - INFO - Processing Silver Person data...
+2026-08-16 07:47:45,080 - INFO - Source: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:47:45,081 - INFO - Person Bridge: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:47:45,082 - INFO - Checking if source path exists: /Volumes/claimsprocessing/bronze/member_consolidated
+2026-08-16 07:47:45,083 - INFO - Table/Path check: /Volumes/claimsprocessing/bronze/member_consolidated - Exists
+2026-08-16 07:47:45,084 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:47:45,085 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:47:45,996 - INFO - Consolidated member data loaded: 5 records
+2026-08-16 07:47:45,997 - INFO - Loading person bridge table: claimsprocessing.silver.silver_memberpersonbridge
+2026-08-16 07:47:46,399 - INFO - Person bridge data loaded: 0 records
+2026-08-16 07:47:46,401 - INFO - Starting data transformations...
+2026-08-16 07:48:14,703 - INFO - Configuration loaded:
+2026-08-16 07:48:14,704 - INFO -   Source Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:48:14,705 - INFO -   Silver Person Bridge Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:48:14,706 - INFO -   Silver Person Table: claimspan.silver.silver_member
+2026-08-16 07:48:26,071 - INFO - ============================================================
+2026-08-16 07:48:26,072 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:48:26,074 - INFO - ============================================================
+2026-08-16 07:48:26,076 - INFO - Processing Silver Person data...
+2026-08-16 07:48:26,077 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:48:26,077 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:48:26,078 - INFO - Checking if source path exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:48:26,080 - INFO - Table/Path check: /Volumes/claimspan/bronze/member_consolidated - Exists
+2026-08-16 07:48:26,080 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:48:26,081 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:48:26,559 - INFO - Consolidated member data loaded: 2 records
+2026-08-16 07:48:26,560 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:48:26,919 - INFO - Person bridge data loaded: 1 records
+2026-08-16 07:48:26,924 - INFO - Starting data transformations...
+2026-08-16 07:49:40,154 - INFO - ============================================================
+2026-08-16 07:49:40,155 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:49:40,156 - INFO - ============================================================
+2026-08-16 07:49:40,157 - INFO - Processing Silver Person data...
+2026-08-16 07:49:40,158 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:49:40,159 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:49:40,160 - INFO - Checking if source path exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:49:40,161 - INFO - Table/Path check: /Volumes/claimspan/bronze/member_consolidated - Exists
+2026-08-16 07:49:40,162 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:49:40,162 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:49:40,720 - INFO - Consolidated member data loaded: 2 records
+2026-08-16 07:49:40,721 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:49:41,064 - INFO - Person bridge data loaded: 1 records
+2026-08-16 07:49:41,065 - INFO - Starting data transformations...
+2026-08-16 07:49:41,067 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:49:41,648 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 07:49:41,650 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:49:41,827 - INFO - Created temp view: consolidateMem
+2026-08-16 07:49:42,091 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:49:42,092 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:49:42,206 - INFO - SQL join completed
+2026-08-16 07:49:42,829 - INFO - Join result: 1 records to process
+2026-08-16 07:49:42,830 - INFO - Processing 1 records for Silver Person table: claimspan.silver.silver_member
+2026-08-16 07:49:43,327 - INFO - Target table exists - executing MERGE to prevent duplicate records
+2026-08-16 07:51:10,579 - INFO - ============================================================
+2026-08-16 07:51:10,580 - INFO - Silver Person Processing Started
+2026-08-16 07:51:10,581 - INFO - ============================================================
+2026-08-16 07:51:10,923 - INFO - Configuration loaded:
+2026-08-16 07:51:10,925 - INFO -   Source Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:51:10,926 - INFO -   Silver Person Bridge Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:51:10,929 - INFO -   Silver Person Table: claimspan.silver.silver_member
+2026-08-16 07:51:11,482 - INFO - ============================================================
+2026-08-16 07:51:11,484 - INFO - MAIN EXECUTION STARTED
+2026-08-16 07:51:11,485 - INFO - ============================================================
+2026-08-16 07:51:11,486 - INFO - Processing Silver Person data...
+2026-08-16 07:51:11,487 - INFO - Source: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:51:11,488 - INFO - Person Bridge: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:51:11,489 - INFO - Checking if source path exists: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 07:51:11,490 - INFO - Table/Path check: /Volumes/claimspan/bronze/member_consolidated - Exists
+2026-08-16 07:51:11,491 - INFO - Source table exists - proceeding with processing
+2026-08-16 07:51:11,492 - INFO - Loading consolidated member data from source path...
+2026-08-16 07:51:12,023 - INFO - Consolidated member data loaded: 2 records
+2026-08-16 07:51:12,024 - INFO - Loading person bridge table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 07:51:12,396 - INFO - Person bridge data loaded: 1 records
+2026-08-16 07:51:12,398 - INFO - Starting data transformations...
+2026-08-16 07:51:12,399 - INFO - Applying transformations: distinct, hash, row number, unique record
+2026-08-16 07:51:12,954 - INFO - Transformations completed: 1 records after distinct
+2026-08-16 07:51:12,955 - INFO - Creating temporary views for SQL processing
+2026-08-16 07:51:13,125 - INFO - Created temp view: consolidateMem
+2026-08-16 07:51:13,378 - INFO - Created temp view: silverPersonBrdg
+2026-08-16 07:51:13,380 - INFO - Executing SQL join between member and person bridge...
+2026-08-16 07:51:13,498 - INFO - SQL join completed
+2026-08-16 07:51:14,164 - INFO - Join result: 1 records to process
+2026-08-16 07:51:14,165 - INFO - Processing 1 records for Silver Person table: claimspan.silver.silver_member
+2026-08-16 07:51:14,318 - INFO - Target table does not exist - creating initial table via append mode
+2026-08-16 07:51:18,540 - INFO - Silver Person table updated successfully
+2026-08-16 07:51:18,541 - INFO - ============================================================
+2026-08-16 07:51:18,541 - INFO - PROCESSING COMPLETED SUCCESSFULLY
+2026-08-16 07:51:18,542 - INFO - ============================================================

@@ -1,0 +1,76 @@
+2026-08-20 13:48:06,042 - INFO - ============================================================
+2026-08-20 13:48:06,043 - INFO - Provider Silver Layer Processing Started
+2026-08-20 13:48:06,044 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_20260820_134805.log
+2026-08-20 13:48:06,045 - INFO - ============================================================
+2026-08-20 13:48:15,242 - INFO - ============================================================
+2026-08-20 13:48:15,243 - INFO - Provider Silver Layer Processing Started
+2026-08-20 13:48:15,244 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_20260820_134815.log
+2026-08-20 13:48:15,245 - INFO - ============================================================
+2026-08-20 13:48:18,448 - INFO - Configuration loaded:
+2026-08-20 13:48:18,450 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 13:48:18,451 - INFO -   Silver Person Bridge Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 13:48:18,451 - INFO -   Silver Provider Table: `claimspan`.silver.silver_provider
+2026-08-20 13:48:38,836 - INFO - MAIN EXECUTION STARTED
+2026-08-20 13:48:38,844 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 13:48:38,845 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 13:51:40,515 - INFO - MAIN EXECUTION STARTED
+2026-08-20 13:51:40,523 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 13:51:40,529 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 13:52:07,182 - INFO - MAIN EXECUTION STARTED
+2026-08-20 13:52:07,186 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 13:52:07,188 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 13:52:47,644 - INFO - MAIN EXECUTION STARTED
+2026-08-20 13:52:47,647 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 13:52:47,648 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:06:05,874 - INFO - ============================================================
+2026-08-20 14:06:05,875 - INFO - Provider Silver Layer Processing Started
+2026-08-20 14:06:05,876 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_20260820_140605.log
+2026-08-20 14:06:05,877 - INFO - ============================================================
+2026-08-20 14:06:06,311 - INFO - Configuration loaded:
+2026-08-20 14:06:06,313 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 14:06:06,315 - INFO -   Silver Person Bridge Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 14:06:06,318 - INFO -   Silver Provider Table: `claimspan`.silver.silver_provider
+2026-08-20 14:06:07,173 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:06:07,178 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 14:06:07,200 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:15:40,150 - INFO - ============================================================
+2026-08-20 14:15:40,160 - INFO - Provider Silver Layer Processing Started
+2026-08-20 14:15:40,161 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_20260820_141540.log
+2026-08-20 14:15:40,163 - INFO - ============================================================
+2026-08-20 14:15:40,529 - INFO - Configuration loaded:
+2026-08-20 14:15:40,532 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 14:15:40,533 - INFO -   Silver Person Bridge Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 14:15:40,534 - INFO -   Silver Provider Table: `claimspan`.silver.silver_provider
+2026-08-20 14:15:41,336 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:15:41,341 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 14:15:41,342 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:15:58,879 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:15:58,881 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 14:15:58,881 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:41:28,359 - INFO - ============================================================
+2026-08-20 14:41:28,362 - INFO - Provider Silver Layer Processing Started
+2026-08-20 14:41:28,368 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_20260820_144128.log
+2026-08-20 14:41:28,370 - INFO - ============================================================
+2026-08-20 14:41:28,733 - INFO - Configuration loaded:
+2026-08-20 14:41:28,735 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 14:41:28,737 - INFO -   Silver Person Bridge Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 14:41:28,738 - INFO -   Silver Provider Table: `claimspan`.silver.silver_provider
+2026-08-20 14:41:29,548 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:41:29,551 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 14:41:29,552 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:45:58,576 - INFO - Configuration loaded:
+2026-08-20 14:45:58,578 - INFO -   Source Path: /Volumes/claimspan/bronze/provider_consolidated
+2026-08-20 14:45:58,579 - INFO -   Silver Person Bridge Table: `claimspan`.silver.silver_providerpersonbridge
+2026-08-20 14:45:58,580 - INFO -   Silver Provider Table: `claimspan`.silver.silver_provider
+2026-08-20 14:46:17,609 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:46:17,611 - INFO - Data check: /Volumes/claimspan/bronze/provider_consolidated - Data exists
+2026-08-20 14:46:17,613 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:46:52,670 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:46:52,672 - INFO - Data check: /Volumes/claimspan/bronze/provider_consolidated - Data exists
+2026-08-20 14:46:52,673 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:49:11,339 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:49:11,341 - INFO - Data check: /Volumes/claimspan/bronze/provider_consolidated - Data exists
+2026-08-20 14:49:11,342 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists
+2026-08-20 14:50:41,727 - INFO - MAIN EXECUTION STARTED
+2026-08-20 14:50:41,728 - INFO - Data check: /Volumes/claimspan/bronze/provider_consolidated - Data exists
+2026-08-20 14:50:41,729 - INFO - Data check: `claimspan`.silver.silver_providerpersonbridge - Data exists

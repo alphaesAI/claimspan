@@ -1,0 +1,18 @@
+2026-08-16 05:36:09,549 - INFO - FHIR Member Person Bridge Processing Started
+2026-08-16 05:36:09,551 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/DimMember/logs/memberpersonbridge_20260816_053609.log
+2026-08-16 05:36:11,125 - INFO - Configuration loaded:
+2026-08-16 05:36:11,127 - INFO -   Source Volume Path: /Volumes/claimsprocessing/bronze/fhirmember_consolidated
+2026-08-16 05:36:11,127 - INFO -   Target Silver Table: claimsprocessing.silver.fhirpersongrouping
+2026-08-16 05:37:04,952 - INFO - Configuration loaded:
+2026-08-16 05:37:04,957 - INFO -   Source Volume Path: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 05:37:04,958 - INFO -   Target Silver Table: claimspan.silver.silver_memberpersonbridge
+2026-08-16 05:38:12,535 - INFO - ============================================================
+2026-08-16 05:38:12,537 - INFO - MAIN EXECUTION STARTED FOR FHIR
+2026-08-16 05:38:12,538 - INFO - ============================================================
+2026-08-16 05:38:12,539 - INFO - Starting LoadSource from volume: /Volumes/claimspan/bronze/member_consolidated
+2026-08-16 05:38:13,353 - INFO - Raw FHIR records loaded: 1
+2026-08-16 05:38:14,834 - INFO - Processed FHIR records after transformations: 1
+2026-08-16 05:38:14,835 - INFO - LoadSource completed successfully
+2026-08-16 05:38:15,922 - INFO - Total FHIR records to process: 1
+2026-08-16 05:38:15,925 - INFO - Single record detected - skipping linkage
+2026-08-16 05:38:25,156 - INFO - Silver FHIR layer processing completed successfully (single record path)

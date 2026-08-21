@@ -1,0 +1,50 @@
+2026-08-20 15:43:21,967 - INFO - ============================================================
+2026-08-20 15:43:21,970 - INFO - Provider Hierarchy Silver Layer Processing Started
+2026-08-20 15:43:21,972 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_hierarchy_20260820_154321.log
+2026-08-20 15:43:21,975 - INFO - ============================================================
+2026-08-20 15:43:22,298 - INFO - Configuration loaded:
+2026-08-20 15:43:22,299 - INFO -   Source Path: /Volumes/claimsprocessing/bronze/provider_hierarchy
+2026-08-20 15:43:22,300 - INFO -   Silver Hierarchy Table: `claimsprocessing`.silver.silver_provider_hierarchy
+2026-08-20 15:43:23,106 - INFO - MAIN EXECUTION STARTED
+2026-08-20 15:43:23,110 - INFO - Data check: /Volumes/claimsprocessing/bronze/provider_hierarchy - Data exists
+2026-08-20 15:43:23,112 - INFO - Data check: `claimsprocessing`.silver.ref_provider_affiliation - Data exists
+2026-08-20 15:45:13,513 - INFO - Configuration loaded:
+2026-08-20 15:45:13,515 - INFO -   Source Path: /Volumes/claimspan/bronze/provider_hierarchy
+2026-08-20 15:45:13,516 - INFO -   Silver Hierarchy Table: `claimspan`.silver.silver_provider_hierarchy
+2026-08-20 15:50:44,143 - INFO - ============================================================
+2026-08-20 15:50:44,144 - INFO - Provider Hierarchy Silver Layer Processing Started
+2026-08-20 15:50:44,145 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_hierarchy_20260820_155044.log
+2026-08-20 15:50:44,146 - INFO - ============================================================
+2026-08-20 15:50:44,490 - INFO - Configuration loaded:
+2026-08-20 15:50:44,495 - INFO -   Source Path: /Volumes/claimspan/bronze/provider_hierarchy
+2026-08-20 15:50:44,495 - INFO -   Silver Hierarchy Table: `claimspan`.silver.silver_provider_hierarchy
+2026-08-20 15:51:52,940 - INFO - MAIN EXECUTION STARTED
+2026-08-20 15:51:52,947 - INFO - Data check: /Volumes/claimspan/bronze/provider_hierarchy - Data exists
+2026-08-20 15:51:52,949 - INFO - Data check: `claimspan`.silver.ref_provider_affiliation - Data exists
+2026-08-20 15:51:54,632 - INFO - Data check: `claimspan`.silver.ref_credentialing - Data exists
+2026-08-20 16:10:16,570 - INFO - Configuration loaded:
+2026-08-20 16:10:16,571 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 16:10:16,573 - INFO -   Silver Hierarchy Table: `claimspan`.silver.silver_provider_hierarchy
+2026-08-20 16:10:21,500 - INFO - MAIN EXECUTION STARTED
+2026-08-20 16:10:21,502 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 16:10:21,503 - INFO - Data check: `claimspan`.silver.ref_provider_affiliation - Data exists
+2026-08-20 16:10:21,769 - INFO - Data check: `claimspan`.silver.ref_credentialing - Data exists
+2026-08-20 16:14:43,898 - INFO - MAIN EXECUTION STARTED
+2026-08-20 16:14:43,900 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 16:14:43,901 - INFO - Data check: `claimspan`.silver.ref_provider_affiliation - Data exists
+2026-08-20 16:14:44,482 - INFO - Data check: `claimspan`.silver.ref_credentialing - Data exists
+2026-08-20 16:15:06,894 - INFO - ============================================================
+2026-08-20 16:15:06,895 - INFO - Provider Hierarchy Silver Layer Processing Started
+2026-08-20 16:15:06,897 - INFO - Log file: /Workspace/Repos/logi@openhealthagents.org/claimspan/ClaimsProcessing/logs/provider_hierarchy_20260820_161506.log
+2026-08-20 16:15:06,898 - INFO - ============================================================
+2026-08-20 16:15:08,303 - INFO - Configuration loaded:
+2026-08-20 16:15:08,304 - INFO -   Source Path: /Volumes/claimspan/bronze/provider
+2026-08-20 16:15:08,305 - INFO -   Silver Hierarchy Table: `claimspan`.silver.silver_provider_hierarchy
+2026-08-20 16:15:13,652 - INFO - MAIN EXECUTION STARTED
+2026-08-20 16:15:13,654 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 16:15:13,655 - INFO - Data check: `claimspan`.silver.ref_provider_affiliation - Data exists
+2026-08-20 16:15:13,887 - INFO - Data check: `claimspan`.silver.ref_credentialing - Data exists
+2026-08-20 16:16:05,116 - INFO - MAIN EXECUTION STARTED
+2026-08-20 16:16:05,119 - INFO - Data check: /Volumes/claimspan/bronze/provider - Data exists
+2026-08-20 16:16:05,120 - INFO - Data check: `claimspan`.silver.ref_provider_affiliation - Data exists
+2026-08-20 16:16:05,407 - INFO - Data check: `claimspan`.silver.ref_credentialing - Data exists
