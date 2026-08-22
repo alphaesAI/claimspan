@@ -10,8 +10,8 @@
           "SourceFormat": "delta"
         }
       ],
-      "SQLScriptPath": "../DataProcessing/gmembergroupprocessing.sql",
-      "MergeScriptPath": "../DataUpdate/gmembergroupupdate.sql"
+      "SQLScriptPath": "/Workspace/ClaimsProcessing/DimMember/Gold/DataProcessing/dimmembergroupprocessing.sql",
+      "MergeScriptPath": "/Workspace/ClaimsProcessing/DimMember/Gold/DataUpdate/dimmembergroupupdate.sql"
     }
   ]
 }
