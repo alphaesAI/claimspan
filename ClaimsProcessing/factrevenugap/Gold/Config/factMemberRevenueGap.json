@@ -2,7 +2,7 @@
   "SubLayerProcessing": [
     {
       "SubGroupEntity": "factmemberrevenuegap",
-      "DestinationTable": "claimspan.gold.factmemberrevenuegap",
+      "DestinationTable": "claimspan.gold.gold_factmemberrevenuegap",
       "SourceTables": [
         {
           "Entity": "memberRevenueGap",
@@ -22,6 +22,11 @@
         {
           "Entity": "dimMember",
           "SourceTable": "claimspan.gold.gold_dimmember",
+          "SourceFormat": "delta"
+        },
+        {
+          "Entity": "dimMemberGroup",
+          "SourceTable": "claimspan.gold.gold_ma_membergroup",
           "SourceFormat": "delta"
         },
         {

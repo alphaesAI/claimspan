@@ -3,9 +3,9 @@ WITH sourceTbl AS (
     IFNULL(dimMonth.monthKey, -99)                                  AS pecYearMonthKey,
     IFNULL(dimClient.clientKey, -99)                                AS clientKey,
     IFNULL(dimMember.memberKey, -99)                                AS memberKey,
-    CAST('-99' AS STRING)                                           AS memberGroupKey,
+    IFNULL(dimMemberGroup.memberGroupKey, '-99')                    AS memberGroupKey,
     IFNULL(mrg.planID, '')                                          AS planID,
-    IFNULL(dimProvider.payerIdentifier, '')                         AS payerIdentifier,
+    IFNULL(dimProvider.identifier_payerID, '')                      AS payerIdentifier,
     IFNULL(dimHCC.hccKey, -99)                                      AS hccKey,
     IFNULL(dimDate1.dateKey, -99)                                   AS snapshotDateKey,
     IFNULL(dimProvider.providerKey, -99)                            AS planProviderKey,
@@ -23,13 +23,16 @@ WITH sourceTbl AS (
   LEFT JOIN dimMember dimMember
     ON TRIM(mrg.planMemberID) = TRIM(dimMember.identifier_planMemberID)
    AND CAST(dimMember.isCurrent AS INT) = 1
+  LEFT JOIN dimMemberGroup dimMemberGroup
+    ON TRIM(mrg.subscriberID) = TRIM(dimMemberGroup.identifier_subscriberID)
+   AND (TRIM(mrg.planID) = TRIM(dimMemberGroup.identifier_groupNumber) OR TRIM(mrg.planMemberID) = TRIM(dimMemberGroup.identifier_beneficiaryID))
   LEFT JOIN dimHCC dimHCC
     ON TRIM(mrg.hccNumber) = TRIM(dimHCC.HCCNumber)
    AND SUBSTRING(REPLACE(CAST(mrg.reportMonth AS STRING), '-', ''), 1, 4) = CAST(dimHCC.EffectiveYear AS STRING)
    AND TRIM(mrg.hccVersion) = TRIM(dimHCC.HCCVersion)
    AND UPPER(TRIM(dimHCC.HCCType)) IN ('COMM', 'ESRD', 'RX')
   LEFT JOIN dimProvider dimProvider
-    ON TRIM(mrg.providerID) = TRIM(dimProvider.practitionerIdentifier)
+    ON TRIM(mrg.providerID) = TRIM(dimProvider.ESAIInternalProviderID)
    AND CAST(dimProvider.isCurrent AS INT) = 1
   LEFT JOIN dimAlertGroup dimAlertGroup
     ON TRIM(mrg.alertCategory) = TRIM(dimAlertGroup.alertGroupCode)
