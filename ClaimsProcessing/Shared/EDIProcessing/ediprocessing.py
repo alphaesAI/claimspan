@@ -1,27 +1,42 @@
+import os
 import json
 from pyedi import X12Parser, StructuredFormatter
 
 class EDIProcessor:
+    """
+    Handles reading and parsing individual EDI files into structured JSON.
+    """
     def __init__(self):
         self.parser = X12Parser()
         self.formatter = StructuredFormatter()
 
-    def parse(self, file_path: str):
-        # 1. Read the raw EDI file
-        print("file path: ", file_path)
+    def __call__(self, file_path: str) -> dict:
+        """
+        Callable interface to parse a single EDI file from a file path.
+        """
+        if not file_path:
+            raise ValueError("File path cannot be empty.")
+            
+        # Normalize legacy DBFS paths to OS paths if present
+        if file_path.startswith("dbfs:/"):
+            file_path = file_path.replace("dbfs:/", "/dbfs/", 1)
+            
+        if os.path.isfile(file_path):
+            return self.parse(file_path)
+        else:
+            raise FileNotFoundError(f"File path not found or is a directory: {file_path}")
+
+    def parse(self, file_path: str) -> dict:
+        """
+        Reads raw EDI text from a single file path and formats it into structured JSON.
+        """
         with open(file_path, "r", encoding="utf-8") as file:
             edi_data = file.read()
 
-        # 2. Convert raw EDI text to generic JSON structure
         generic_json = self.parser.parse(edi_data)
-
-        print("\n\n generic json (first 300 chars): ", json.dumps(generic_json, default=str)[:300])
-
-        # 3. Format it immediately into the structured format your pipeline expects
         structured_json = self.formatter.format(
             generic_json,
             include_technical=True
         )
-
-        print("\n\n structured_json (first 300 chars): ", json.dumps(structured_json, default=str)[:300])
+        
         return structured_json

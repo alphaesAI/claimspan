@@ -1,0 +1,89 @@
+import json
+import os
+import sys
+import dlt
+from pyspark.sql.functions import col, udf, expr
+from pyspark.sql.types import StringType, StructType, StructField
+
+# Worker path setup
+REPO_ROOT = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+if REPO_ROOT not in sys.path:
+    sys.path.append(REPO_ROOT)
+
+
+# UDF 1: Raw Segment Extraction
+@udf(returnType=StringType())
+def extract_edi_json(file_path: str) -> str:
+    if not file_path:
+        return None
+    if REPO_ROOT not in sys.path:
+        sys.path.append(REPO_ROOT)
+    try:
+        from ClaimsProcessing.Shared.EDIProcessing.ediprocessing import EDIProcessor
+        processor = EDIProcessor()
+        return json.dumps(processor(file_path))
+    except Exception as e:
+        return json.dumps({"error": str(e)})
+
+
+# UDF 2: Data Mapping
+@udf(returnType=StringType())
+def map_edi_json(raw_json_str: str) -> str:
+    if not raw_json_str:
+        return None
+    if REPO_ROOT not in sys.path:
+        sys.path.append(REPO_ROOT)
+    try:
+        raw_json = json.loads(raw_json_str)
+        if "error" in raw_json:
+            return None
+        from ClaimsProcessing.DimMember.EDIProcessing.mapper import Mapper
+        mapper = Mapper()
+        return json.dumps(mapper.map_member(raw_json))
+    except Exception as e:
+        return json.dumps({"error": str(e)})
+
+
+# Step 1: Ingest Raw Files
+@dlt.table(name="stg_edi_files")
+def stg_edi_files():
+    return (
+        spark.readStream.format("cloudFiles")
+        .option("cloudFiles.format", "binaryFile") 
+        .load("/Volumes/claimspan/source/834")
+        .select(
+            col("_metadata.file_path").alias("source_file_path"),
+            col("_metadata.file_modification_time").alias("ingested_at")
+        )
+    )
+
+
+# Step 2: Intermediate Table - Store Extracted EDI JSON
+@dlt.table(name="int_edi_extracted_json")
+def int_edi_extracted_json():
+    return (
+        dlt.read_stream("stg_edi_files")
+        .select(
+            col("source_file_path"),
+            col("ingested_at"),
+            extract_edi_json(col("source_file_path")).alias("raw_extracted_json")
+        )
+    )
+
+
+# Step 3: Final Table - Map Data & Include Row Status
+@dlt.table(name="edi_parsed_mapped")
+def edi_parsed_mapped():
+    return (
+        dlt.read_stream("int_edi_extracted_json")
+        .select(
+            col("source_file_path"),
+            col("ingested_at"),
+            map_edi_json(col("raw_extracted_json")).alias("edi_parsed")
+        )
+        # Explicit status column to identify empty/failed parses (like smithog.txt)
+        .withColumn(
+            "status",
+            expr("CASE WHEN edi_parsed = '{}' OR edi_parsed IS NULL THEN 'FAILED' ELSE 'SUCCESS' END")
+        )
+    )
