@@ -2,7 +2,8 @@ import json
 import os
 import sys
 import dlt
-from pyspark.sql.functions import col, udf, expr
+from pyspark.sql.functions import col, udf, expr, from_json
+
 from pyspark.sql.types import StringType, StructType, StructField
 
 # Worker path setup
@@ -10,6 +11,12 @@ REPO_ROOT = os.path.abspath(os.path.join(os.getcwd(), "../.."))
 if REPO_ROOT not in sys.path:
     sys.path.append(REPO_ROOT)
 
+# Import helper modules
+from src.shared.filestoprocess import FilesToProcess
+from src.utils.filehandling import FileHandler
+
+SCHEMA_PATH = os.path.join(REPO_ROOT, "src/dimember/schemas/memberschema.json")
+MEMBER_SCHEMA = FileHandler.load_struct_type(SCHEMA_PATH)
 
 # UDF 1: Raw Segment Extraction
 @udf(returnType=StringType())
@@ -87,3 +94,16 @@ def edi_parsed_mapped():
             expr("CASE WHEN edi_parsed = '{}' OR edi_parsed IS NULL THEN 'FAILED' ELSE 'SUCCESS' END")
         )
     )
+
+@dlt.table(name="bronze_member_processed")
+def bronze_member_processed():
+    parsed_df = (
+        dlt.read_stream("edi_parsed_mapped")
+        .filter(col("status") == "SUCCESS")
+        .select(
+            from_json(col("edi_parsed"), MEMBER_SCHEMA).alias("data"),
+            col("source_file_path").alias("FILE_ID")
+        )
+        .select("data.*", "FILE_ID")
+    )
+    return FilesToProcess.process_bronze_member_stream(parsed_df)
