@@ -15,6 +15,8 @@ if REPO_ROOT not in sys.path:
 from src.shared.filestoprocess import FilesToProcess
 from src.utils.filehandling import FileHandler
 from src.shared.consolidation import ConsolidationProcessor
+from src.dimember.silver.membergrouping import ProcessMemberBridge
+from src.dimember.silver.member import process_silver_member
 
 SCHEMA_PATH = os.path.join(REPO_ROOT, "src/dimember/schemas/memberschema.json")
 MEMBER_SCHEMA = FileHandler.load_struct_type(SCHEMA_PATH)
@@ -124,3 +126,34 @@ def member_consolidated():
         ConsolidatedMappingFilePath=CONSOLIDATION_SCHEMA_DIR,
         ConsolidatedMappingFileName="ConsolidationMember.json"
     )
+
+# Step 6: Silver Member Person Bridge Table
+@dlt.table(
+    name="silver_memberpersonbridge",
+    comment="Silver Member Person Bridge Table processed via DLT"
+)
+def silver_memberpersonbridge():
+    # dlt.read fetches the batch DataFrame snapshot so toPandas() works smoothly
+    df_consolidated = dlt.read("member_consolidated")
+    return ProcessMemberBridge(df_consolidated)
+
+# Step 7: Final Silver Member Table (Materialized View)
+@dlt.table(
+    name="silver_member",
+    comment="Final Silver Member table joining consolidated member data with person bridge"
+)
+def silver_member():
+    # Fetch batch snapshots of both upstream tables
+    df_consolidated = dlt.read("member_consolidated")
+    df_person_bridge = dlt.read("silver_memberpersonbridge")
+    
+    # Execute transformations and return final DataFrame
+    return process_silver_member(
+        spark=spark,
+        df_consolidated=df_consolidated,
+        df_person_bridge=df_person_bridge
+    )
+
+
+
+
