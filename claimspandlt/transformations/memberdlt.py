@@ -14,9 +14,12 @@ if REPO_ROOT not in sys.path:
 # Import helper modules
 from src.shared.filestoprocess import FilesToProcess
 from src.utils.filehandling import FileHandler
+from src.shared.consolidation import ConsolidationProcessor
 
 SCHEMA_PATH = os.path.join(REPO_ROOT, "src/dimember/schemas/memberschema.json")
 MEMBER_SCHEMA = FileHandler.load_struct_type(SCHEMA_PATH)
+
+CONSOLIDATION_SCHEMA_DIR = os.path.join(REPO_ROOT, "ClaimsProcessing/DimMember/Bronze/Schema/Consolidation")
 
 # UDF 1: Raw Segment Extraction
 @udf(returnType=StringType())
@@ -107,3 +110,17 @@ def bronze_member_processed():
         .select("data.*", "FILE_ID")
     )
     return FilesToProcess.process_bronze_member_stream(parsed_df)
+
+# Step 5: Dynamic Streaming Consolidation
+@dlt.table(name="member_consolidated")
+def member_consolidated():
+    stream_df = dlt.read_stream("bronze_member_processed")
+    
+    return ConsolidationProcessor.process_consolidation_stream(
+        spark=spark,
+        df_stream=stream_df,
+        ConsolidatedLayerDataModelFilePath=f"{CONSOLIDATION_SCHEMA_DIR}/DataModels",
+        ConsolidatedLayerDataModel="MemberDataModel.json",
+        ConsolidatedMappingFilePath=CONSOLIDATION_SCHEMA_DIR,
+        ConsolidatedMappingFileName="ConsolidationMember.json"
+    )
