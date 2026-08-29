@@ -1,0 +1,23 @@
+id: eb0e61e1-95cd-4163-85b5-9f56db60108c
+pipeline_type: WORKSPACE
+name: claimspandlt
+configuration:
+  spark.executorEnv.PYTHONPATH: /Workspace/Repos/logi@openhealthagents.org/claimspan
+  spark.executorEnv.CLAIMSPAN_REPO_ROOT: /Workspace/Repos/logi@openhealthagents.org/claimspan
+  spark.env.CLAIMSPAN_REPO_ROOT: /Workspace/Repos/logi@openhealthagents.org/claimspan
+libraries:
+  - file:
+      path: /Repos/logi@openhealthagents.org/claimspan/claimspandlt/transformations/memberdlt.py
+  - file:
+      path: /Repos/logi@openhealthagents.org/claimspan/claimspandlt/transformations/memberdlt2.py
+schema: bronzedlt
+continuous: false
+development: true
+photon: true
+channel: CURRENT
+catalog: claimspan
+serverless: true
+root_path: /Repos/logi@openhealthagents.org/claimspan
+environment:
+  dependencies:
+    - recordlinkage
