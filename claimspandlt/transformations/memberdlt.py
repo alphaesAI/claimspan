@@ -45,7 +45,7 @@ def load_gold_config():
 )
 def silver_memberpersonbridge():
     """Creates bridge table between person entity and member dimension."""
-    df_consolidated = dlt.read_stream("member_consolidated")
+    df_consolidated = spark.read.table("member_consolidated")
     return ProcessMemberBridge(df_consolidated)
 
 
@@ -55,8 +55,8 @@ def silver_memberpersonbridge():
 )
 def silver_member():
     """Processes silver member dataset combining bridge context."""
-    df_consolidated = dlt.read("member_consolidated")
-    df_person_bridge = dlt.read("silver_memberpersonbridge")
+    df_consolidated = spark.read.table("member_consolidated")
+    df_person_bridge = spark.read.table("silver_memberpersonbridge")
     
     return process_silver_member(
         df_consolidated=df_consolidated,

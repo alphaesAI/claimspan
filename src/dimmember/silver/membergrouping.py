@@ -1,4 +1,3 @@
-import recordlinkage
 import pandas as pd
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
@@ -56,6 +55,8 @@ def LoadSource(df_bronze):
 
 def RulesToCompare(rules, pandasMem_df):
     """Executes record linkage rules against a partition Pandas DataFrame."""
+    import recordlinkage
+    
     matchesAllRules_df = pd.DataFrame()
     for lst in rules:
         indexer = recordlinkage.Index()
