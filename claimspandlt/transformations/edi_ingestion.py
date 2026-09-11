@@ -8,6 +8,16 @@ Target DLT Tables:
     - stg_edi_files
     - edi_extracted_json
     - edi_parsed_mapped
+
+@dlt.table(name='', comment='')
+def function_name():
+    return 
+
+in python, every calculations are done by one man.
+but in spark, the tasks or calculations shared among the workers. 
+
+master ( this function is needs to process, this the input, this is the output we expect // who responsible to share the tasks. ) - (4) worker
+
 """
 
 import json

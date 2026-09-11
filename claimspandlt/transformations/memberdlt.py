@@ -84,3 +84,15 @@ for entity in config_data.get("SubLayerProcessing", []):
         sequence_by=sequence_by_col,
         stored_as_scd_type="2"
     )
+
+
+
+    ''' 
+    bronze (member_consolidated) = streaming table
+
+    silver_memberpersonbridge = materialized view - member consolidated
+    silver_member = materialized view - member consolidated
+    '''
+
+
+
