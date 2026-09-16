@@ -16,18 +16,18 @@ from pyspark.sql.functions import col, from_json
 
 REPO_ROOT = os.environ.get(
     "CLAIMSPAN_REPO_ROOT", 
-    os.path.abspath(os.path.join(os.getcwd(), "../.."))
+    os.path.abspath(os.path.join(os.getcwd(), "../../../"))
 )
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
-from src.shared.filestoprocess import FilesToProcess
-from src.utils.filehandling import FileHandler
-from src.shared.consolidation import ConsolidationProcessor
+from claimspandlt.transformations.shared.filestoprocess import FilesToProcess
+from claimspandlt.transformations.utils.filehandling import FileHandler
+from claimspandlt.transformations.shared.consolidation import ConsolidationProcessor
 
-SCHEMA_PATH = os.path.join(REPO_ROOT, "src/dimmember/bronze/schemas/memberschema.json")
+SCHEMA_PATH = os.path.join(REPO_ROOT, "claimspandlt/transformations/dimmember/bronze/schemas/memberschema.json")
 MEMBER_SCHEMA = FileHandler.load_struct_type(SCHEMA_PATH)
-CONSOLIDATION_SCHEMA_DIR = os.path.join(REPO_ROOT, "src/dimmember/bronze/schemas/consolidation")
+CONSOLIDATION_SCHEMA_DIR = os.path.join(REPO_ROOT, "claimspandlt/transformations/dimmember/bronze/schemas/consolidation")
 
 
 @dlt.table(name="bronze_member_processed")

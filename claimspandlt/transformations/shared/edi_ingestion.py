@@ -29,7 +29,7 @@ from pyspark.sql.types import StringType
 
 REPO_ROOT = os.environ.get(
     "CLAIMSPAN_REPO_ROOT", 
-    os.path.abspath(os.path.join(os.getcwd(), "../.."))
+    os.path.abspath(os.path.join(os.getcwd(), "../../.."))
 )
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
@@ -40,7 +40,7 @@ def extract_edi_json(file_path: str) -> str:
     if not file_path:
         return None
     try:
-        from src.shared import EDIProcessor
+        from claimspandlt.transformations.shared.ediprocessing import EDIProcessor
         processor = EDIProcessor()
         return json.dumps(processor(file_path))
     except Exception as e:
@@ -53,7 +53,7 @@ def map_edi_json(raw_json_str: str, layout_id: str) -> str:
     if not raw_json_str or not layout_id:
         return None
     try:
-        from src.maps import MapperFactory
+        from claimspandlt.transformations.maps.factory import MapperFactory
         
         raw_json = json.loads(raw_json_str)
         if "error" in raw_json:
