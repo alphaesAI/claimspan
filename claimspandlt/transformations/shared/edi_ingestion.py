@@ -24,7 +24,7 @@ import json
 import os
 import sys
 import dlt
-from pyspark.sql.functions import col, udf, expr, get_json_object
+from pyspark.sql.functions import col, udf, expr, get_json_object, coalesce
 from pyspark.sql.types import StringType
 
 REPO_ROOT = os.environ.get(
@@ -63,7 +63,9 @@ def map_edi_json(raw_json_str: str, layout_id: str) -> str:
         if layout_str == "834":
             domain_type = "member"
         elif layout_str == "837":
-            domain_type = "claims"
+            domain_type = "provider"
+        elif layout_str == "274":
+            domain_type = "provider"
         else:
             raise ValueError(f"Unsupported layout ID: {layout_id}")
 
@@ -79,7 +81,7 @@ def stg_edi_files():
     return (
         spark.readStream.format("cloudFiles")
         .option("cloudFiles.format", "binaryFile") 
-        .load("/Volumes/claimspan/source/834")
+        .load("/Volumes/claimspan/source/all")
         .select(
             col("_metadata.file_path").alias("source_file_path"),
             col("_metadata.file_modification_time").alias("ingested_at")
@@ -103,9 +105,15 @@ def edi_extracted_json():
         )
         .withColumn(
             "extracted_layout_id", 
-            get_json_object(
-                col("raw_extracted_json"), 
-                "$.heading.transaction_set_header_loop.transaction_set_header_ST.transaction_set_identifier_code"
+            coalesce(
+                get_json_object(
+                    col("raw_extracted_json"), 
+                    "$.heading.transaction_set_header_loop.transaction_set_header_ST.transaction_set_identifier_code"
+                ),
+                get_json_object(
+                    col("raw_extracted_json"), 
+                    "$.heading.interchange_control_header_loop.interchange_control_header_ST.st01_01"
+                )
             )
         )
     )

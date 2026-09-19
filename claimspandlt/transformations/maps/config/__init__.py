@@ -4,5 +4,6 @@ Configuration package initialization for EDI schema mapping dictionary specifica
 
 from .claimsmappings import CLAIMSMAPPINGS
 from .membermappings import MEMBERMAPPINGS
+from .providermappings import PROVIDERMAPPINGS
 
-__all__ = ["CLAIMSMAPPINGS", "MEMBERMAPPINGS"]
+__all__ = ["CLAIMSMAPPINGS", "MEMBERMAPPINGS", "PROVIDERMAPPINGS"]

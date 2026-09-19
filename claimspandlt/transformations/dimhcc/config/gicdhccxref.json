@@ -1,0 +1,36 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "icdHCCXref",
+      "DestinationTable": "gold_icdhccxref",
+      "SourceTables": [
+        {
+          "Entity": "HCCICDDatasetXref",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/HCCICDDatasetXref",
+          "SourceFormat": "parquet"
+        },
+        {
+          "Entity": "ICDDataset",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/ICDDataset",
+          "SourceFormat": "parquet"
+        },
+        {
+          "Entity": "ICDEffectiveYear",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/ICDEffectiveYear",
+          "SourceFormat": "parquet"
+        },
+        {
+          "Entity": "HCCDataset",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/HCCDataset",
+          "SourceFormat": "parquet"
+        },
+        {
+          "Entity": "HCCEffectiveYear",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/HCCEffectiveYear",
+          "SourceFormat": "parquet"
+        }
+      ],
+      "SQLScriptPath": "../sql/gold_icdhccxref.sql"
+    }
+  ]
+}

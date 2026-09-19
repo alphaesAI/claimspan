@@ -6,6 +6,7 @@ from typing import Literal
 from .base import BaseMapper
 from .claimsmapper import ClaimsMapper
 from .membermapper import MemberMapper
+from .providermapper import ProviderMapper
 
 
 class MapperFactory:
@@ -14,19 +15,21 @@ class MapperFactory:
     """
 
     @staticmethod
-    def get_mapper(domain_type: Literal["member", "claims"]) -> BaseMapper:
+    def get_mapper(domain_type: Literal["member", "claims", "provider"]) -> BaseMapper:
         """
         Instantiates and returns the mapper corresponding to the requested domain.
 
         Args:
-            domain_type (Literal["member", "claims"]): The domain key for mapper selection.
+            domain_type (Literal["member", "claims", "provider"]): The domain key for mapper selection.
 
         Returns:
-            BaseMapper: An instance of MemberMapper or ClaimsMapper.
+            BaseMapper: An instance of MemberMapper, ClaimsMapper, or ProviderMapper.
         """
         if domain_type == "member":
             return MemberMapper()
         elif domain_type == "claims":
             return ClaimsMapper()
+        elif domain_type == "provider":
+            return ProviderMapper()
         else:
             raise ValueError(f"Invalid domain type: {domain_type}")

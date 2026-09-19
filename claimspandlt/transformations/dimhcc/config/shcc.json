@@ -1,0 +1,21 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "silver_hcc",
+      "DestinationTable": "silver_hcc",
+      "SourceTables": [
+        {
+          "Entity": "HCCDataSet",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/HCCDataset",
+          "SourceFormat": "parquet"
+        },
+        {
+          "Entity": "HCCEffectiveYear",
+          "SourceTable": "/Volumes/#clientCode/OperationalData/RAQ/TepReference/dbo/HCCEffectiveYear",
+          "SourceFormat": "parquet"
+        }
+      ],
+      "SQLScriptPath": "../sql/silver_hcc.sql"
+    }
+  ]
+}

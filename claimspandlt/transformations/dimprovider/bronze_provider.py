@@ -28,14 +28,14 @@ from claimspandlt.transformations.utils.filehandling import FileHandler
 from claimspandlt.transformations.shared.consolidation import ConsolidationProcessor
 
 # Provider Schema Paths
-PROVIDER_SCHEMA_PATH = os.path.join(REPO_ROOT, "ClaimsProcessing/dimProvider/Bronze/Schema/provider_schema.json")
+PROVIDER_SCHEMA_PATH = os.path.join(REPO_ROOT, "claimspandlt/transformations/dimprovider/bronze/schema/providerschema.json")
 PROVIDER_SCHEMA = FileHandler.load_struct_type(PROVIDER_SCHEMA_PATH)
 
-PROVIDER_HIERARCHY_SCHEMA_PATH = os.path.join(REPO_ROOT, "ClaimsProcessing/dimProvider/Bronze/Schema/provider_hierarchy_schema.json")
+PROVIDER_HIERARCHY_SCHEMA_PATH = os.path.join(REPO_ROOT, "claimspandlt/transformations/dimprovider/bronze/schema/providerhierarchyschema.json")
 PROVIDER_HIERARCHY_SCHEMA = FileHandler.load_struct_type(PROVIDER_HIERARCHY_SCHEMA_PATH)
 
 # Consolidation Schema Directories
-PROVIDER_CONSOLIDATION_SCHEMA_DIR = os.path.join(REPO_ROOT, "ClaimsProcessing/dimProvider/Bronze/Schema/Consolidation")
+PROVIDER_CONSOLIDATION_SCHEMA_DIR = os.path.join(REPO_ROOT, "claimspandlt/transformations/dimprovider/bronze/schema/consolidation")
 
 
 @dlt.table(name="bronze_provider_processed")
@@ -71,10 +71,10 @@ def provider_consolidated():
     return ConsolidationProcessor.process_consolidation_stream(
         spark=spark,
         df_stream=stream_df,
-        ConsolidatedLayerDataModelFilePath=f"{PROVIDER_CONSOLIDATION_SCHEMA_DIR}/DataModels",
+        ConsolidatedLayerDataModelFilePath=f"{PROVIDER_CONSOLIDATION_SCHEMA_DIR}/datamodels",
         ConsolidatedLayerDataModel="providerdatamodel.json",
         ConsolidatedMappingFilePath=PROVIDER_CONSOLIDATION_SCHEMA_DIR,
-        ConsolidatedMappingFileName="ConsolidationProvider.json"
+        ConsolidatedMappingFileName="consolidationprovider.json"
     )
 
 
@@ -111,8 +111,8 @@ def provider_hierarchy_consolidated():
     return ConsolidationProcessor.process_consolidation_stream(
         spark=spark,
         df_stream=stream_df,
-        ConsolidatedLayerDataModelFilePath=f"{PROVIDER_CONSOLIDATION_SCHEMA_DIR}/DataModels",
+        ConsolidatedLayerDataModelFilePath=f"{PROVIDER_CONSOLIDATION_SCHEMA_DIR}/datamodels",
         ConsolidatedLayerDataModel="providerhierarchydatamodel.json",
         ConsolidatedMappingFilePath=PROVIDER_CONSOLIDATION_SCHEMA_DIR,
-        ConsolidatedMappingFileName="ConsolidationProviderHierarchy.json"
+        ConsolidatedMappingFileName="consolidationproviderhierarchy.json"
     )

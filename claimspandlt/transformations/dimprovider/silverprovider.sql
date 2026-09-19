@@ -74,23 +74,23 @@ WITH consolidateProvider1 AS (
     prov.name_given_first,
     
     -- Taxonomy and specialty codes (5 sets)
-    COALESCE(prov.identifier_taxonomyCode1, cpt1.Taxo) AS TaxonomyCode1,
+    COALESCE(prov.identifier_taxonomyCode1, s1.TaxonomyCode) AS TaxonomyCode1,
     COALESCE(s1.Specialty, prov.identifier_hpSpecialtyCode1) AS HpSpecialtyCode1,
     COALESCE(LPAD(CAST(s1.CMSSpecialtyCode AS STRING), 2, '0'), prov.identifier_advProviderSpecialtyCode1) AS ADVProviderSpecialtyCode1,
     
-    COALESCE(prov.identifier_taxonomyCode2, cpt2.Taxo) AS TaxonomyCode2,
+    COALESCE(prov.identifier_taxonomyCode2, s2.TaxonomyCode) AS TaxonomyCode2,
     COALESCE(s2.Specialty, prov.identifier_hpSpecialtyCode2) AS HpSpecialtyCode2,
     COALESCE(LPAD(CAST(s2.CMSSpecialtyCode AS STRING), 2, '0'), prov.identifier_advProviderSpecialtyCode2) AS ADVProviderSpecialtyCode2,
     
-    COALESCE(prov.identifier_taxonomyCode3, cpt3.Taxo) AS TaxonomyCode3,
+    COALESCE(prov.identifier_taxonomyCode3, s3.TaxonomyCode) AS TaxonomyCode3,
     COALESCE(s3.Specialty, prov.identifier_hpSpecialtyCode3) AS HpSpecialtyCode3,
     COALESCE(LPAD(CAST(s3.CMSSpecialtyCode AS STRING), 2, '0'), prov.identifier_advProviderSpecialtyCode3) AS ADVProviderSpecialtyCode3,
     
-    COALESCE(prov.identifier_taxonomyCode4, cpt4.Taxo) AS TaxonomyCode4,
+    COALESCE(prov.identifier_taxonomyCode4, s4.TaxonomyCode) AS TaxonomyCode4,
     COALESCE(s4.Specialty, prov.identifier_hpSpecialtyCode4) AS HpSpecialtyCode4,
     COALESCE(LPAD(CAST(s4.CMSSpecialtyCode AS STRING), 2, '0'), prov.identifier_advProviderSpecialtyCode4) AS ADVProviderSpecialtyCode4,
     
-    COALESCE(prov.identifier_taxonomyCode5, cpt5.Taxo) AS TaxonomyCode5,
+    COALESCE(prov.identifier_taxonomyCode5, s5.TaxonomyCode) AS TaxonomyCode5,
     COALESCE(s5.Specialty, prov.identifier_hpSpecialtyCode5) AS HpSpecialtyCode5,
     COALESCE(LPAD(CAST(s5.CMSSpecialtyCode AS STRING), 2, '0'), prov.identifier_advProviderSpecialtyCode5) AS ADVProviderSpecialtyCode5,
     
@@ -119,30 +119,20 @@ WITH consolidateProvider1 AS (
     ON prov.identifier_providerID = brdg.identifier_providerID
     
   -- Taxonomy lookups (5 sets)
-  LEFT JOIN `claimspan`.silver.ref_careprecise_taxonomy s1
+  LEFT JOIN `claimspan`.silver.ref_provider_specialty s1
     ON prov.identifier_hpSpecialtyCode1 = s1.Specialty
-  LEFT JOIN `claimspan`.silver.ref_credentialing cpt1
-    ON s1.Taxo = cpt1.Taxo
     
-  LEFT JOIN `claimspan`.silver.ref_careprecise_taxonomy s2
+  LEFT JOIN `claimspan`.silver.ref_provider_specialty s2
     ON prov.identifier_hpSpecialtyCode2 = s2.Specialty
-  LEFT JOIN `claimspan`.silver.ref_credentialing cpt2
-    ON s2.Taxo = cpt2.Taxo
     
-  LEFT JOIN `claimspan`.silver.ref_careprecise_taxonomy s3
+  LEFT JOIN `claimspan`.silver.ref_provider_specialty s3
     ON prov.identifier_hpSpecialtyCode3 = s3.Specialty
-  LEFT JOIN `claimspan`.silver.ref_credentialing cpt3
-    ON s3.Taxo = cpt3.Taxo
     
-  LEFT JOIN `claimspan`.silver.ref_careprecise_taxonomy s4
+  LEFT JOIN `claimspan`.silver.ref_provider_specialty s4
     ON prov.identifier_hpSpecialtyCode4 = s4.Specialty
-  LEFT JOIN `claimspan`.silver.ref_credentialing cpt4
-    ON s4.Taxo = cpt4.Taxo
     
-  LEFT JOIN `claimspan`.silver.ref_careprecise_taxonomy s5
+  LEFT JOIN `claimspan`.silver.ref_provider_specialty s5
     ON prov.identifier_hpSpecialtyCode5 = s5.Specialty
-  LEFT JOIN `claimspan`.silver.ref_credentialing cpt5
-    ON s5.Taxo = cpt5.Taxo
 )
 
 SELECT 
