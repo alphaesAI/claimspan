@@ -1,9 +1,12 @@
 import dlt
-from pyspark.sql.functions import col, hash, concat, coalesce, lit
+from pyspark.sql.functions import col, concat, lit, coalesce, hash, current_timestamp
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType, BooleanType
 
-# Explicit schema to avoid CF_EMPTY_DIR_FOR_SCHEMA_INFERENCE error when the volume is empty
-alert_group_schema = StructType([
+VOLUME_BASE_PATH = "/Volumes/claimspan/source/alertgroup"
+CSV_PATH = f"{VOLUME_BASE_PATH}/alert_group_reference.csv"
+
+# Schema matching original CSV definition
+schema = StructType([
     StructField("AlertGroupID", IntegerType(), False),
     StructField("AlertGroupCode", StringType(), False),
     StructField("AlertGroupDescription", StringType(), False),
@@ -12,29 +15,39 @@ alert_group_schema = StructType([
     StructField("Active", BooleanType(), False)
 ])
 
+# ==========================================
+# 1. BRONZE / RAW INGESTION (Streaming Source)
+# ==========================================
 @dlt.table(
-    name="silver_alertgroup",
-    comment="Cleaned and hashed silver layer for alert groups"
+    name="raw_alertgroup",
+    comment="Raw alert group data stream from CSV",
+    table_properties={"quality": "bronze"}
 )
-@dlt.expect_or_drop("valid_id", "alertGroupKey IS NOT NULL")
-def silver_alertgroup():
-    source_path = "/Volumes/claimspan/source/alertgroup"
-    
-    df = (
-        spark.readStream.format("cloudFiles")
-        .option("cloudFiles.format", "csv")
-        .option("header", "true")
-        .schema(alert_group_schema)
-        .load(source_path)
-    )
-    
+def raw_alertgroup():
+    return spark.readStream.format("cloudFiles") \
+        .option("cloudFiles.format", "csv") \
+        .option("header", "true") \
+        .schema(schema) \
+        .load(VOLUME_BASE_PATH)
+
+
+# ==========================================
+# 2. SILVER LAYER: silver_alertgroup
+# ==========================================
+@dlt.table(
+    name="temp_silver_alertgroup",
+    comment="Transformed and hashed alert group records for silver layer",
+    table_properties={"quality": "silver"}
+)
+def temp_silver_alertgroup():
+    df = dlt.read_stream("raw_alertgroup")
     return df.select(
-        col("AlertGroupID").cast("int").alias("alertGroupKey"), # Aliased back to alertGroupKey to match Gold expectations
+        col("AlertGroupID").alias("alertGroupID"),
         col("AlertGroupCode").alias("alertGroupCode"),
         col("AlertGroupDescription").alias("alertGroupDescription"),
         col("DisplayText").alias("displayText"),
-        col("SortOrder").cast("int").alias("sortOrder"),
-        col("Active").cast("boolean").alias("isActive"),
+        col("SortOrder").alias("sortOrder"),
+        col("Active").alias("isActive"),
         hash(
             concat(
                 coalesce(col("AlertGroupID").cast("string"), lit("")), lit("|"),
@@ -44,18 +57,55 @@ def silver_alertgroup():
                 coalesce(col("SortOrder").cast("string"), lit("")), lit("|"),
                 coalesce(col("Active").cast("string"), lit("false"))
             )
-        ).alias("hashKey")
+        ).alias("hashKey"),
+        current_timestamp().alias("_sequence_num")
+    )
+
+dlt.create_streaming_table(
+    name="silver_alertgroup",
+    comment="Cleaned silver alert group dimension table with SCD Type 1 upserts",
+    table_properties={"quality": "silver"}
+)
+
+dlt.apply_changes(
+    target="silver_alertgroup",
+    source="temp_silver_alertgroup",
+    keys=["alertGroupID"],
+    sequence_by=col("_sequence_num"),
+    stored_as_scd_type=1
+)
+
+
+# ==========================================
+# 3. GOLD LAYER: gold_dimalertgroup
+# ==========================================
+@dlt.table(
+    name="temp_gold_dimalertgroup",
+    comment="Prepared gold alert group dimension updates",
+    table_properties={"quality": "gold"}
+)
+def temp_gold_dimalertgroup():
+    df = spark.readStream.option("skipChangeCommits", "true").table("silver_alertgroup")
+    return df.select(
+        col("alertGroupID").alias("alertGroupKey"),
+        col("alertGroupCode"),
+        col("alertGroupDescription"),
+        col("displayText"),
+        col("sortOrder"),
+        col("isActive"),
+        current_timestamp().alias("_sequence_num")
     )
 
 dlt.create_streaming_table(
     name="gold_dimalertgroup",
-    comment="Gold dimension table for alert groups"
+    comment="Final conformed gold dimension table for alert groups",
+    table_properties={"quality": "gold"}
 )
 
 dlt.apply_changes(
     target="gold_dimalertgroup",
-    source="silver_alertgroup",
+    source="temp_gold_dimalertgroup",
     keys=["alertGroupKey"],
-    sequence_by="hashKey",
+    sequence_by=col("_sequence_num"),
     stored_as_scd_type=1
 )

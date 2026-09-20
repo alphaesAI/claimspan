@@ -1,5 +1,6 @@
 -- Silver Provider Layer
 -- Enriches consolidated provider data with reference lookups and quality checks
+SET spark.databricks.sql.streaming.skipChangeCommits = true;
 
 -- Silver Provider Person Bridge
 -- Creates unique provider identifiers and tracks provider linkages

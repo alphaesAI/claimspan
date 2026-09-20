@@ -2,8 +2,8 @@ import dlt
 from pyspark.sql.functions import col, lit, current_date, when
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
-# ─── Source table schemas (placeholder — connect real sources when available) ─
-# These temporary views define the expected schema for upstream source tables.
+# ─── Source table schemas (mock data for development/testing) ─
+# These temporary views provide mock data matching the MemberRevenueGaps notebook.
 # Replace with real ingestion (Auto Loader, UC tables, etc.) when data is staged.
 
 @dlt.temporary_view()
@@ -14,7 +14,15 @@ def BasePrintedDiags():
         StructField("AlertCategory", StringType(), True),
         StructField("AlertResponseType", IntegerType(), True),
     ])
-    return spark.createDataFrame([], schema)
+    # Mock data: AlertResponseType 1=Confirmed, 2=Rejected, 0=No response
+    # Using real member IDs from gold_dimmember for fact table join compatibility
+    data = [
+        ("A7001564738", "18", "HIST", 1),   # Suspected diabetes, provider confirmed, RAPS claim found
+        ("A7005564738", "18", "SUSP", 0),   # Suspected diabetes, no claim, open gap
+        ("MD777888999", "18", "HIST", 0),   # Suspected diabetes, MAO-004 encounter found
+        ("A7002564738", "19", "SUSP", 2),   # Suspected diabetes, provider rejected
+    ]
+    return spark.createDataFrame(data, schema)
 
 
 @dlt.temporary_view()
@@ -23,7 +31,12 @@ def HCCRaps():
         StructField("MemberID", StringType(), True),
         StructField("HCC", StringType(), True),
     ])
-    return spark.createDataFrame([], schema)
+    # Mock data: submitted RAPS claims
+    data = [
+        ("A7001564738", "18"),  # Member A7001564738 has diabetes claim in RAPS
+        ("A7005564738", "19"),  # Member A7005564738 has diabetes claim in RAPS
+    ]
+    return spark.createDataFrame(data, schema)
 
 
 @dlt.temporary_view()
@@ -32,7 +45,12 @@ def MAO004DetailDiagnosis():
         StructField("MemberID", StringType(), True),
         StructField("HCC", StringType(), True),
     ])
-    return spark.createDataFrame([], schema)
+    # Mock data: submitted MAO-004 encounters
+    data = [
+        ("A7001564738", "18"),  # Member A7001564738 has encounter in MAO-004
+        ("MD777888999", "18"),  # Member MD777888999 has encounter in MAO-004
+    ]
+    return spark.createDataFrame(data, schema)
 
 
 @dlt.table(
