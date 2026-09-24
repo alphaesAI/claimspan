@@ -1,12 +1,12 @@
 import os
 import json
-from pyedi import X12Parser, StructuredFormatter
 
 class EDIProcessor:
     """
     Handles reading and parsing individual EDI files into structured JSON.
     """
     def __init__(self):
+        from pyedi import X12Parser, StructuredFormatter
         self.parser = X12Parser()
         self.formatter = StructuredFormatter()
 

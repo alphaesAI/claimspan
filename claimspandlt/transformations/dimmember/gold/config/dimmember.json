@@ -1,0 +1,11 @@
+{
+  "SubLayerProcessing": [
+    {
+      "SubGroupEntity": "dimensionMember",
+      "DestinationTable": "gold_dimmember",
+      "SourceTable": "claimspan.bronzedlt.silver_member",
+      "Keys": ["ESAIInternalPersonID"],
+      "SequenceBy": "LoadDateTime"
+    }
+  ]
+}
